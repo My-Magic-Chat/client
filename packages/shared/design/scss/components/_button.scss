@@ -13,9 +13,10 @@
     text-transform: uppercase;
 
     &:disabled {
-        background-color: var(--gray-100) !important;
-        color: var(--gray-200) !important;
         cursor: not-allowed !important;
+        color: var(--gray-200) !important;
+        background-image: none !important;
+        background-color: var(--gray-100) !important;
 
         &:hover {
             box-shadow: $box-shadow !important;
@@ -24,7 +25,7 @@
     }
 
     &._brand {
-        background-color: var(--brand);
+        background-image: var(--gradient-brand);
         color: var(--mode);
 
         &:hover {
@@ -33,7 +34,7 @@
     }
 
     &._accent {
-        background-color: var(--accent);
+        background-image: var(--gradient-accent);
         color: var(--mode);
 
         &:hover {

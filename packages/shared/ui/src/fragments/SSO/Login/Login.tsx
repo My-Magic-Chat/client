@@ -17,7 +17,14 @@ const Login = ({ formGroup, forgotPassword, signinWithGoogle }: IProps) => {
             <Wrapper gap>
                 <div className="container _left">
                     <Slide.Initial direction="left" show>
-                        Teste
+                        <div className="content">
+                            <h1>
+                                Saiba como automatizar seu negócio digital de forma
+                                <span className="highlight"> mágica </span>!
+                            </h1>
+
+                            <p>Agora é simples responder todos os seus clientes</p>
+                        </div>
                     </Slide.Initial>
                 </div>
 
