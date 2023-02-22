@@ -86,4 +86,25 @@ export class Validator {
     public isValidPercent(value: string): boolean {
         return Number(value) >= 0 && Number(value) <= 100;
     }
+
+    /**
+    * Verifica se o elemento é vazio
+    * @param {string} value Percent
+   */
+    public isEmpty(value: any): boolean {
+        const type = typeof value;
+        let isEmpty = false;
+
+        if (type === 'boolean') {
+            isEmpty = !value;
+        } else if (type !== 'object') {
+            isEmpty = !value;
+        } 
+        // else if (type === 'object') {
+        //     const sanitized = removeEmptyProperties(value);
+        //     isEmpty = isEmptyObject(sanitized);
+        // }
+
+        return isEmpty;
+    }
 }
