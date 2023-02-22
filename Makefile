@@ -4,6 +4,9 @@ RUN:=yarn
 UI:=ui
 DESIGN:=design
 
+# WEB #
+AUTH:=auth
+
 # ------------------------------------------------------------------------------------ #
 
 define run_in_workspace
@@ -28,6 +31,9 @@ install-immutable:
 
 dev-ui:
 	$(call run_in_workspace,$(UI),storybook)
+
+dev-auth:
+	$(call run_in_workspace,$(AUTH),start)
 
 # ------------------ BUILD ------------------ #
 
