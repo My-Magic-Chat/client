@@ -31,8 +31,15 @@ dev-ui:
 
 # ------------------ BUILD ------------------ #
 
+build-ui:
+	$(call run_in_workspace,$(UI),build)
+
 build-design:
 	$(call run_in_workspace,$(DESIGN),build:default)
+
+build-dependencies: build-design build-ui
+
+build-all: build-dependencies
 
 # ------------------ WATCH ------------------ #
 
@@ -46,13 +53,28 @@ define delete_build
 	rm -Rf ./packages/$(1)/dist
 endef
 
+clean-builds:
+	$(call delete_build,shared/$(UI))
+	$(call delete_build,shared/$(DESIGN))
+
 define delete_dependencies
 	@echo delete_dependencies $(1)
 	rm -Rf ./packages/$(1)/node_modules
 endef
 
+clean-dependencies:
+	rm -Rf ./node_modules
+	$(call delete_dependencies,shared/$(UI))
+	$(call delete_dependencies,shared/$(DESIGN))
+
+clean-all: clean-dependencies clean-builds
+
 # ------------------ TEST ------------------ #
 
 # ------------------ LINT ------------------ #
+
+lint:
+	$(call run_in_workspace,$(UI),lint)
+	$(call run_in_workspace,$(DESIGN),lint)
 
 # ------------------ Lighthouse CI ------------------ #

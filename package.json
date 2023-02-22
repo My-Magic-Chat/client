@@ -14,7 +14,9 @@
     ]
   },
   "devDependencies": {
+    "@client/ui": "*",
     "@client/lint": "*",
+    "@client/design": "*",
     "@types/node": "^17.0.24"
   },
   "packageManager": "yarn@3.2.1"
