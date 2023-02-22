@@ -1,14 +1,14 @@
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
-import image from '@rollup/plugin-image';
 import autoprefixer from 'autoprefixer';
 import sass from 'rollup-plugin-sass';
 import { terser } from 'rollup-plugin-terser';
-
 import postcss from 'rollup-plugin-postcss';
 import url from 'postcss-url';
+
+import image from '@rollup/plugin-image';
+import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 
 // eslint-disable-next-line
 const packageJson = require('./package.json');
@@ -42,6 +42,7 @@ export default [
                         'sass',
                         {
                             data: `
+                            @import "~@client/design/dist/utilities/utilities.scss";
                             @import "~@client/design/dist/themes/${brand}.css";
                         ` }
                     ]

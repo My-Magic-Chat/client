@@ -32,3 +32,7 @@ export interface IMessage {
     email: () => string;
     required: (field: string) => string;
 }
+
+export interface Validator {
+    [x: string]: (form: any) => void;
+}

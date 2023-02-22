@@ -9,7 +9,7 @@ describe('Button component', () => {
 
     beforeEach(() => {
         wrapper = render(
-            <Checkbox>Text here</Checkbox>
+            <Checkbox controlName="teste">Text here</Checkbox>
         );
     });
 

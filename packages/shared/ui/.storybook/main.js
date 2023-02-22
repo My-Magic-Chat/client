@@ -25,8 +25,9 @@ module.exports = {
       if (rule.test.test('.scss')) {
         rule.use[2].options = {
           additionalData: `
-                @import "~@client/design/dist/themes/${brand}.css";
-            `
+            @import "~@client/design/dist/utilities/utilities.css";  
+            @import "~@client/design/dist/themes/${brand}.css";
+          `
         };
       }
       return rule;
