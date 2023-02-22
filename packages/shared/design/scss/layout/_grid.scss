@@ -13,7 +13,7 @@
         display: block;
     }
 
-    .ci-col {
+    .#{$pre}-col {
         @for $i from 1 through $columns {
             &-#{$i} {
                 @include grid-column-span($i);
@@ -21,7 +21,7 @@
         }
     }
 
-    .ci-start {
+    .#{$pre}-start {
         @for $i from 1 through $columns {
             &-#{$i} {
                 @include grid-column-start($i);
@@ -30,7 +30,7 @@
     }
 
     @include for-tablet {
-        .ci-col-md {
+        .#{$pre}-col-md {
             @for $i from 1 through $columns {
                 &-#{$i} {
                     @include grid-column-span($i);
@@ -38,7 +38,7 @@
             }
         }
 
-        .ci-start-md {
+        .#{$pre}-start-md {
             @for $i from 1 through $columns {
                 &-#{$i} {
                     @include grid-column-start($i);
@@ -48,7 +48,7 @@
     }
 
     @include for-mobile {
-        .ci-col-sm {
+        .#{$pre}-col-sm {
             @for $i from 1 through $columns {
                 &-#{$i} {
                     @include grid-column-span($i);
@@ -56,7 +56,7 @@
             }
         }
 
-        .ci-start-sm {
+        .#{$pre}-start-sm {
             @for $i from 1 through $columns {
                 &-#{$i} {
                     @include grid-column-start($i);
@@ -66,6 +66,6 @@
     }
 }
 
-.ci-wrapper {
+.#{$pre}-wrapper {
     @include wrapper;
 }
