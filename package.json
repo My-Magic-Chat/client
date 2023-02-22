@@ -4,5 +4,18 @@
   "main": "index.js",
   "license": "MIT",
   "author": "leonardo.goncalves <leogoncalves.contato@gmail.com>",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/shared/*",
+      "packages/shared/config/*",
+      "packages/projects/*"
+    ]
+  },
+  "devDependencies": {
+    "@client/lint": "*",
+    "@types/node": "^17.0.24"
+  },
   "packageManager": "yarn@3.2.1"
 }
