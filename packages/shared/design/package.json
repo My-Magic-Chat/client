@@ -1,0 +1,19 @@
+{
+  "name": "@client/design",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "scripts": {
+    "watch": "node-sass scss/themes/* --watch -o dist/themes",
+    "utilities": "mkdirp dist/utilities && cp -r scss/utilities/* dist/utilities",
+    "theme:default": "node-sass scss/themes/default.scss -o dist/themes --output-style && npm run utilities",
+    "icons": "mkdirp dist/icons && cp -r icons/* dist/icons",
+    "build:default": "npm run theme:default && npm run utilities && npm run icons"
+  },
+  "devDependencies": {
+    "mkdirp": "^1.0.4",
+    "node-sass": "^8.0.0"
+  },
+  "packageManager": "yarn@3.2.1"
+}

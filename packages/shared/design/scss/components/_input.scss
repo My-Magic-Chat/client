@@ -1,0 +1,54 @@
+.#{$pre}-input-container {
+    position: relative;
+
+    .#{$pre}-input-group {
+        height: 42px;
+        border: none;
+        font-size: $medium;
+        border-radius: $radius;
+        transition: all $animation;
+        border: 1px solid var(--gray-100);
+        background-color: var(--mode);
+        user-select: none;
+        padding: 0px 15px;
+
+        @include center;
+
+        input {
+            border: none;
+            width: 100%;
+            background-color: var(--mode);
+            height: -webkit-fill-available;
+            outline: none;
+            user-select: none;
+
+            &._padding {
+                padding-left: 10px;
+            }
+        }
+
+        &._active {
+            border: 1px solid var(--red-300);
+        }
+    }
+
+    .error {
+        overflow: hidden;
+        width: fit-content;
+        padding: 5px 0px;
+        min-height: 26px;
+
+        .message {
+            font-size: $small;
+            transform: translateY(-22px);
+            transition: all $animation;
+            color: var(--red-300);
+            opacity: 0;
+
+            &._active {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    }
+}

@@ -1,12 +1,16 @@
 RUN:=yarn
 
+# LIBS #
+UI:=ui
+DESIGN:=design
+
 # ------------------------------------------------------------------------------------ #
 
 define run_in_workspace
 	@echo --------------------------
 	@echo $(1) - $(2)
 	@echo --------------------------
-	$(RUN) workspace @buzap/$(1) $(2)
+	$(RUN) workspace @client/$(1) $(2)
 endef
 
 setup:
@@ -22,7 +26,13 @@ install-immutable:
 
 # ------------------ BUILD ------------------ #
 
+build-design:
+	$(call run_in_workspace,$(DESIGN),build:default)
+
 # ------------------ WATCH ------------------ #
+
+watch-design:
+	$(call run_in_workspace,$(DESIGN),watch)
 
 # ------------------ CLEAR ------------------ #
 

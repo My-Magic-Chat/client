@@ -1,0 +1,22 @@
+.#{$pre}-modal {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    .container {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .content {
+            width: 750px;
+            padding: 10px;
+            background-color: var(--mode);
+            box-shadow: $box-shadow;
+        }
+    }
+}
