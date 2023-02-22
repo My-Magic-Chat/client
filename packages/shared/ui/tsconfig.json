@@ -17,8 +17,8 @@
       "@components/*": [
         "src/components/*"
       ],
-      "@animations/*": [
-        "src/animations/*"
+      "@animations": [
+        "src/animations"
       ]
     },
     "forceConsistentCasingInFileNames": true,

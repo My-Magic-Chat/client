@@ -1,0 +1,48 @@
+.#{$pre}-checkbox {
+    @include center;
+
+    input[type="checkbox"] {
+        position: relative;
+        width: 1.5em;
+        height: 1.5em;
+        color: var(--text);
+        border: 1px solid var(--gray-300);
+        border-radius: 4px;
+        appearance: none;
+        outline: 0;
+        cursor: pointer;
+        transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 1px;
+            left: 6px;
+            width: 5px;
+            height: 11px;
+            border-style: solid;
+            border-color: var(--mode);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+
+        &:checked {
+            color: var(--mode);
+            border-color: var(--brand);
+            background: var(--brand);
+
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    label {
+        position: relative;
+        cursor: pointer;
+        padding: 0 5px 0;
+        user-select: none;
+    }
+}

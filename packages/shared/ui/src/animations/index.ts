@@ -1,5 +1,1 @@
-import Slide from './Slide';
-
-export {
-    Slide
-};
+export * as Slide from './Slide';

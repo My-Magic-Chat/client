@@ -9,13 +9,15 @@ const Button = ({
     fluid = false,
     type = 'button',
     theme = 'brand',
+    outline = false,
     disabled = false,
     ...props
 }: IProps) => {
     const cls = () => {
         const arr = ['ds-btn'];
 
-        if (theme) { arr.push(`_${theme}`); }
+        if (theme && !outline) { arr.push(`_${theme}`); }
+        if (outline) { arr.push('_outline'); }
         if (fluid) { arr.push('_fluid'); }
 
         return arr.join(' ');

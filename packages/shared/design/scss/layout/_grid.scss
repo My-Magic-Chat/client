@@ -68,4 +68,12 @@
 
 .#{$pre}-wrapper {
     @include wrapper;
+
+    &--gap {
+        gap: 15px;
+    }
+
+    @include for-tablet {
+        display: block;
+    }
 }
