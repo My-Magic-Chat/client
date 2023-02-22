@@ -24,6 +24,11 @@ install:
 install-immutable:
 	yarn install --immutable
 
+# ------------------- DEV ------------------- #
+
+dev-ui:
+	$(call run_in_workspace,$(UI),storybook)
+
 # ------------------ BUILD ------------------ #
 
 build-design:
