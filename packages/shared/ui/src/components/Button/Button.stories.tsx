@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Button, { IProps } from '.';
@@ -46,7 +47,7 @@ const Template: ComponentStory<typeof Button> = (args: IProps) => <Button
     theme={ args.theme }
     fluid={args.fluid}
     disabled={args.disabled}
-    action={() => console.log('Logando...')}/>;
+    onClick={() => console.log('Logando...')}/>;
 
 export const Primary = Template.bind({});
 

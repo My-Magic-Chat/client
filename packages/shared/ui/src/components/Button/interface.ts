@@ -1,8 +1,9 @@
-export interface IProps {
-    children: React.ReactNode;
-    theme?: 'brand' | 'accent';
-    type?: 'button' | 'submit'
+import { HTMLAttributes } from 'react';
+
+export interface IProps extends HTMLAttributes<HTMLButtonElement> {
     fluid?: boolean;
     disabled?: boolean;
-    action?: () => any;
+    children: React.ReactNode;
+    theme?: 'brand' | 'accent';
+    readonly type?: 'submit' | 'button';
 }

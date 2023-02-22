@@ -1,15 +1,16 @@
 import React from 'react';
+
 import { IProps } from './interface';
 
 import './Button.scss';
 
 const Button = ({
     children,
-    action = () => undefined,
-    theme = 'brand',
-    type = 'button',
     fluid = false,
-    disabled = false
+    type = 'button',
+    theme = 'brand',
+    disabled = false,
+    ...props
 }: IProps) => {
     const cls = () => {
         const arr = ['ds-btn'];
@@ -20,14 +21,12 @@ const Button = ({
         return arr.join(' ');
     };
 
-    const click = () => { if (!disabled) { action(); } };
-
     return (
         <button
-            className={cls()}
-            onClick={() => click()}
-            disabled={disabled}
+            {...props}
             type={type}
+            className={cls()}
+            disabled={disabled}
         >{children}</button>
     );
 };
