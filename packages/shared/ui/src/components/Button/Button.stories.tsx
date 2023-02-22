@@ -2,8 +2,9 @@ import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Button, { IProps } from '.';
-import props from './__mocks__';
+import Button from './Button';
+import { IProps } from './interface';
+import mocks from './__mocks__';
 
 export default {
     title: 'Components/Button',
@@ -44,23 +45,23 @@ export default {
 const Template: ComponentStory<typeof Button> = (args: IProps) => <Button
     type={args.type}
     children={args.children}
-    theme={ args.theme }
+    theme={args.theme}
     fluid={args.fluid}
     disabled={args.disabled}
-    onClick={() => console.log('Logando...')}/>;
+    onClick={() => console.log('Logando...')} />;
 
 export const Primary = Template.bind({});
 
-Primary.args = { ...props.data };
+Primary.args = { ...mocks.data };
 
 export const Secondary = Template.bind({});
 
-Secondary.args = { ...props.data, theme: 'accent' };
+Secondary.args = { ...mocks.data, theme: 'accent' };
 
 export const Disabled = Template.bind({});
 
-Disabled.args = { ...props.data, disabled: true };
+Disabled.args = { ...mocks.data, disabled: true };
 
 export const Fluid = Template.bind({});
 
-Fluid.args = { ...props.data, fluid: true };
+Fluid.args = { ...mocks.data, fluid: true };
