@@ -18,11 +18,11 @@ module.exports = {
         sourceType: 'module'
     },
     rules: {
-        '@typescript-eslint/no-explicit-any': ['off'],
-        '@typescript-eslint/ban-ts-comment': 'off',
-        'quotes': ['error', 'single'],
-        'semi': ['error', 'always'],
         'indent': ['error', 4],
+        'semi': ['error', 'always'],
+        'quotes': ['error', 'single'],
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/no-explicit-any': ['off'],
         'no-restricted-imports': ['error'],
         'import-helpers/order-imports': [
             'warn',
@@ -30,19 +30,11 @@ module.exports = {
                 newlinesBetween: 'always',
                 groups: [
                     'module',
-                    '/^@(?!buzap)/',
-                    '/^@buzap/',
+                    '/^@(?!client)/',
+                    '/^@client/',
                     ['parent', 'sibling', 'index']
                 ]
             }
         ]
-    },
-    'overrides': [
-        {
-            'files': ['*.tsx', '*.scss'],
-            'rules': {
-                'indent': ['error', 2],
-            }
-        }
-    ]
+    }
 };
