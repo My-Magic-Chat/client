@@ -65,7 +65,7 @@ jobs:
           ENV: ${{ secrets.ENV }}
           PROJECT: ${{ inputs.PROJECT }}
 
-      - name: Build VivaReal and dependencies
+      - name: Build AUTH and dependencies
         if: steps.cache-build.outputs.cache-hit != 'true'
         run: |
-          if [[ ${{ inputs.PROJECT == 'auth' }} = true ]]; then make build-all-auth; fi
+          if [[ ${{ inputs.PROJECT == 'AUTH' }} = true ]]; then make build-all-auth; fi

@@ -38,7 +38,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{ github.workspace }}/packages/projects/*/.next
+            ${{ github.workspace }}/packages/projects/*/build
             ${{ github.workspace }}/packages/*/dist
             ${{ github.workspace }}/packages/*/*/dist
           key: ${{ github.sha }}-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
