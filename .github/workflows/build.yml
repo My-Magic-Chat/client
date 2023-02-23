@@ -62,6 +62,9 @@ jobs:
         run: bash ${{ github.workspace }}/.deploy/bin/create-env.sh
         env:
           ENV_FILE: ${{ secrets.ENV_FILE }}
+          ENV: ${{ secrets.ENV }}
+          PROJECT: ${{ secrets.PROJECT }}
+          
 
       - name: Build VivaReal and dependencies
         if: steps.cache-build.outputs.cache-hit != 'true'
