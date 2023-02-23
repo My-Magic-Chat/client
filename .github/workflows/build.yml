@@ -15,7 +15,7 @@ on:
 
 jobs:
   lint-and-build:
-    runs-on: [self-hosted, zap, cd]
+    runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
       - name: Checkout

@@ -47,7 +47,7 @@ jobs:
   #       run: make test-lib
 
   test-ui:
-    runs-on: [self-hosted, zap, cd]
+    runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
       - name: Checkout
