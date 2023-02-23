@@ -1,4 +1,4 @@
-name: AUTH STG CI
+name: Auth - STG CI
 
 on:
   pull_request:
