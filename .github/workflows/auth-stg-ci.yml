@@ -1,0 +1,56 @@
+name: Auth - STG CI
+
+on:
+  pull_request:
+    branches:
+      - "*"
+    paths:
+      - 'packages/e2e/**'
+      - 'packages/shared/**'
+      - 'packages/projects/auth/**'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      ENVIRONMENT: STG AUTH
+      BUILD_ENV: STG
+      PROJECT: AUTH
+    secrets: inherit
+
+  unit-tests:
+    needs: [build]
+    uses: ./.github/workflows/unit-tests.yml
+    with:
+      ENVIRONMENT: STG AUTH
+      BUILD_ENV: STG
+      PROJECT: AUTH
+    secrets: inherit
+
+  # e2e-tests:
+  #   needs: [build]
+  #   uses: ./.github/workflows/e2e-tests.yml
+  #   with:
+  #     ENVIRONMENT: QA VIVA
+  #     BUILD_ENV: qa
+  #     HOST: dev.vivareal.com.br
+  #     PROJECT: vivareal
+  #     PORT: 3000
+  #   secrets: inherit
+
+  # sonar-scan:
+  #   uses: ./.github/workflows/sonar-scan.yml
+  #   with:
+  #     ENVIRONMENT: QA VIVA
+  #   secrets: inherit
+
+  # lighthouse:
+  #   uses: ./.github/workflows/lighthouse.yml
+  #   with:
+  #     ENVIRONMENT: QA VIVA
+  #     HOST: dev.vivareal.com.br
+  #     PROJECT: vivareal
+  #     PORT: 3000
+  #   secrets: inherit

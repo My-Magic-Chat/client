@@ -1,0 +1,71 @@
+name: Lint and Build
+
+on:
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+      BUILD_ENV:
+        required: true
+        type: string
+      PROJECT:
+        required: true
+        type: string
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .yarnrc.yml
+        run: |
+          yarn config set 'npmRegistries["https://registry.yarnpkg.com"].npmAuthToken' ${{ secrets.YARN_TOKEN }}
+          yarn config set 'npmRegistries["https://registry.yarnpkg.com"].npmAlwaysAuth' true
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "yarn"
+
+      - name: Cache node_modules
+        id: cache-yarn
+        uses: actions/cache@v3
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ hashFiles('./yarn.lock') }}
+          restore-keys: ${{ runner.os }}-build-${{ hashFiles('./yarn.lock') }}
+
+      - name: Install dependencies
+        if: steps.cache-yarn.outputs.cache-hit != 'true'
+        run: make install-immutable
+
+      - name: Running lint
+        run: make lint
+
+      - name: Cache Builds
+        id: cache-build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/packages/projects/*/build
+            ${{ github.workspace }}/packages/*/dist
+            ${{ github.workspace }}/packages/*/*/dist
+          key: ${{ github.sha }}-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
+          restore-keys: ${{ github.sha }}-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
+
+      - name: Create .env file
+        run: bash ${{ github.workspace }}/.deploy/bin/create-env.sh
+        env:
+          ENV_FILE: ${{ secrets.ENV_FILE }}
+          ENV: ${{ secrets.ENV }}
+          PROJECT: ${{ inputs.PROJECT }}
+
+      - name: Build VivaReal and dependencies
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        run: |
+          if [[ ${{ inputs.PROJECT == 'auth' }} = true ]]; then make build-all-auth; fi
