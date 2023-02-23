@@ -55,15 +55,15 @@ jobs:
             ${{ github.workspace }}/packages/projects/*/build
             ${{ github.workspace }}/packages/*/dist
             ${{ github.workspace }}/packages/*/*/dist
-          key: ${{ github.sha }}-${{ secrets.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
-          restore-keys: ${{ github.sha }}-${{ secrets.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
+          key: ${{ github.sha }}-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
+          restore-keys: ${{ github.sha }}-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
 
       - name: Create .env file
         run: bash ${{ github.workspace }}/.deploy/bin/create-env.sh
         env:
           ENV_FILE: ${{ secrets.ENV_FILE }}
           ENV: ${{ secrets.ENV }}
-          PROJECT: ${{ secrets.PROJECT }}
+          PROJECT: ${{ inputs.PROJECT }}
 
       - name: Build VivaReal and dependencies
         if: steps.cache-build.outputs.cache-hit != 'true'

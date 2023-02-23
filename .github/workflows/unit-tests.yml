@@ -73,7 +73,7 @@ jobs:
             ${{ github.workspace }}/packages/projects/*/build
             ${{ github.workspace }}/packages/*/dist
             ${{ github.workspace }}/packages/*/*/dist
-          key: ${{ github.sha }}-${{ secrets.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
+          key: ${{ github.sha }}-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
 
       - name: Run tests
         run: make test-ui
