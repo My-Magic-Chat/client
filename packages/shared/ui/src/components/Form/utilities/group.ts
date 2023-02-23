@@ -24,7 +24,7 @@ export class FormGroup<T> {
     public get values(): any {
         const values: { [key: string]: any } = {};
 
-        this.eachControl((control, key) => ({ [key]: control.value }))
+        this.eachControl((control, key) => ({ [key as string]: control.value }))
             .forEach(control => { for (const prop in control) { values[prop] = control[prop]; } });
 
         return values;
@@ -41,7 +41,7 @@ export class FormGroup<T> {
         return Boolean(this.eachControl((control) => control.dirty).find(i => i));
     }
 
-    private eachControl(fn: (control: FormControl<T>, key: string) => any) {
+    private eachControl(fn: (control: FormControl<T>, key?: string) => any) {
         return Object.keys(this.controls).map(k => {
             return fn(this.controls[k], k);
         });
@@ -54,7 +54,7 @@ export class FormGroup<T> {
     }
 
     public dirty(): void {
-        this.eachControl((control, _) => control.dirty = true);
+        this.eachControl((control) => control.dirty = true);
     }
 
     public validate() {

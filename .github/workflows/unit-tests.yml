@@ -1,0 +1,79 @@
+name: Unit Tests
+
+on:
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+      BUILD_ENV:
+        required: true
+        type: string
+      PROJECT:
+        required: true
+        type: string
+
+jobs:
+  # test-lib:
+  #   runs-on: [self-hosted, zap, cd]
+  #   environment: ${{ inputs.ENVIRONMENT }}
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+
+  #     - name: Install NodeJS
+  #       uses: actions/setup-node@v3
+  #       with:
+  #           node-version: '16'
+  #           cache: 'yarn'
+
+  #     - name: Cache node modules
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: '**/node_modules'
+  #         key: ${{ runner.os }}-build-${{ hashFiles('./yarn.lock') }}
+
+  #     - name: Cache Builds
+  #       id: cache-build
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: |
+  #           ${{ github.workspace }}/packages/projects/*/build
+  #           ${{ github.workspace }}/packages/*/dist
+  #           ${{ github.workspace }}/packages/*/*/dist
+  #         key: ${{ github.sha }}-${{ secrets.THEME }}-${{ inputs.BUILD_ENV }}-dist
+
+  #     - name: Run tests
+  #       run: make test-lib
+
+  test-ui:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+            node-version: '16'
+            cache: 'yarn'
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-build-${{ hashFiles('./yarn.lock') }}
+
+      - name: Cache Builds
+        id: cache-build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/packages/projects/*/build
+            ${{ github.workspace }}/packages/*/dist
+            ${{ github.workspace }}/packages/*/*/dist
+          key: ${{ github.sha }}-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
+
+      - name: Run tests
+        run: make test-ui

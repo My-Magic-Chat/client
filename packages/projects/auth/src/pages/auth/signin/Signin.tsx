@@ -7,7 +7,7 @@ function Signin() {
         email: new FormControl({ value: 'teste@teste.com', type: 'email', required: true }),
         password: new FormControl({ value: '123456', type: 'password', required: true }),
         remember: new FormControl({ value: false }),
-    }, { submit: (form) => console.log('SUBMIT', form) })
+    }, { submit: (form) => console.log('SUBMIT', form) });
 
     const forgotPassword = () => console.log('forgot');
     const signinWithGoogle = () => console.log('signinWithGoogle');

@@ -80,10 +80,13 @@ clean-all: clean-dependencies clean-builds
 
 # ------------------ TEST ------------------ #
 
+test-ui:
+	$(call run_in_workspace,$(UI),test)
+
 # ------------------ LINT ------------------ #
 
 lint:
 	$(call run_in_workspace,$(UI),lint)
-	$(call run_in_workspace,$(DESIGN),lint)
+	$(call run_in_workspace,$(AUTH),lint)
 
 # ------------------ Lighthouse CI ------------------ #

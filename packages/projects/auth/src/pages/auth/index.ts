@@ -6,4 +6,4 @@ export {
     Signin,
     Signup,
     Forgot
-}
+};
