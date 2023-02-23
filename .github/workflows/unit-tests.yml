@@ -9,6 +9,9 @@ on:
       BUILD_ENV:
         required: true
         type: string
+      PROJECT:
+        required: true
+        type: string
 
 jobs:
   # test-lib:
