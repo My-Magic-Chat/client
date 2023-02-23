@@ -45,7 +45,10 @@ build-design:
 
 build-dependencies: build-design build-ui
 
-build-all: build-dependencies
+build-auth:
+	$(call run_in_workspace,$(AUTH),build)
+
+build-all-auth: build-dependencies build-auth
 
 # ------------------ WATCH ------------------ #
 
