@@ -9,6 +9,9 @@ on:
       BUILD_ENV:
         required: true
         type: string
+      PROJECT:
+        required: true
+        type: string
 
 jobs:
   lint-and-build:
@@ -55,10 +58,10 @@ jobs:
           key: ${{ github.sha }}-${{ secrets.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
           restore-keys: ${{ github.sha }}-${{ secrets.PROJECT }}-${{ inputs.BUILD_ENV }}-dist
 
-      # - name: Create .env file
-      #   run: bash ${{ github.workspace }}/.deploy/bin/create-env.sh
-      #   env:
-      #     ENV_FILE: ${{ secrets.ENV_FILE }}
+      - name: Create .env file
+        run: bash ${{ github.workspace }}/.deploy/bin/create-env.sh
+        env:
+          ENV_FILE: ${{ secrets.ENV_FILE }}
 
       - name: Build VivaReal and dependencies
         if: steps.cache-build.outputs.cache-hit != 'true'

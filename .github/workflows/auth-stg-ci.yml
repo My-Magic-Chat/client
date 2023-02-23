@@ -15,7 +15,7 @@ jobs:
   build:
     uses: ./.github/workflows/build.yml
     with:
-      ENVIRONMENT: STG VIVA
+      ENVIRONMENT: STG AUTH
       BUILD_ENV: STG
       PROJECT: AUTH
     secrets: inherit
@@ -24,7 +24,7 @@ jobs:
     needs: [build]
     uses: ./.github/workflows/unit-tests.yml
     with:
-      ENVIRONMENT: STG VIVA
+      ENVIRONMENT: STG AUTH
       BUILD_ENV: STG
       PROJECT: AUTH
     secrets: inherit
