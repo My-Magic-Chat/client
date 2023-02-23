@@ -26,5 +26,6 @@ jobs:
     with:
       ENVIRONMENT: STG AUTH
       BUILD_ENV: STG
+      PROJECT: AUTH
     secrets: inherit
 
