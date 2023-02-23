@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { render, RenderResult, act, getByPlaceholderText} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, RenderResult } from '@testing-library/react';
 import { FormControl, FormGroup } from '@components/Form';
 import { wrapperForm } from '@components/Form/__mocks__';
 
@@ -12,11 +11,11 @@ describe('Button component', () => {
     let formGroup: FormGroup<any>;
     let handleMock: any;
 
-    const renderWrapper = (props: Partial<IProps>): RenderResult => {
+    const renderWrapper = (props: Partial<IProps>, value: string): RenderResult => {
         handleMock = jest.fn();
 
         formGroup = new FormGroup<any>({
-            input: new FormControl({ value: props.value })
+            input: new FormControl({ value })
         }, { change: handleMock });
 
         return render(
@@ -25,13 +24,13 @@ describe('Button component', () => {
     };
 
     it('should render input', () => {
-        const wrapper = renderWrapper({ value: '' });
+        const wrapper = renderWrapper({ }, '');
         const input = wrapper.container.querySelector('input');
         expect(input).toBeInTheDocument();
     });
 
     it('should render input placeholder', () => {
-        const wrapper = renderWrapper({ value: '', placeholder: 'um placeholder aqui' });
+        const wrapper = renderWrapper({ placeholder: 'um placeholder aqui' }, '');
         const { getByPlaceholderText } = wrapper;
         expect(getByPlaceholderText('um placeholder aqui')).toBeDefined();
     });

@@ -80,6 +80,9 @@ clean-all: clean-dependencies clean-builds
 
 # ------------------ TEST ------------------ #
 
+test-ui:
+	$(call run_in_workspace,$(UI),test)
+
 # ------------------ LINT ------------------ #
 
 lint:
