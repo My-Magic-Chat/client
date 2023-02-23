@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - master
-    # paths:
-    #   - 'packages/e2e/**'
-    #   - 'packages/shared/**'
-    #   - 'packages/projects/auth/**'
+    paths:
+      - 'packages/e2e/**'
+      - 'packages/shared/**'
+      - 'packages/projects/auth/**'
 
   workflow_dispatch:
 
