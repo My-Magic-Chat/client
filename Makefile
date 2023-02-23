@@ -87,6 +87,6 @@ test-ui:
 
 lint:
 	$(call run_in_workspace,$(UI),lint)
-	$(call run_in_workspace,$(DESIGN),lint)
+	$(call run_in_workspace,$(AUTH),lint)
 
 # ------------------ Lighthouse CI ------------------ #
