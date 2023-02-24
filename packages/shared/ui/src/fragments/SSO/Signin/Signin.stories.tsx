@@ -3,15 +3,15 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { FormControl, FormGroup } from '@components/Form';
 
-import Login from './Login';
+import Signin from './Signin';
 import { IForm } from './interface';
 
 export default {
-    title: 'Fragments/SSO/Login',
-    component: Login
-} as ComponentMeta<typeof Login>;
+    title: 'Fragments/SSO/Signin',
+    component: Signin
+} as ComponentMeta<typeof Signin>;
 
-const Template: ComponentStory<typeof Login> = () => {
+const Template: ComponentStory<typeof Signin> = () => {
     const formGroup = new FormGroup<IForm>({
         remember: new FormControl({ value: true }),
         email: new FormControl({ value: '', type: 'email', required: true }),
@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof Login> = () => {
     }, { submit: (form) => console.log('Submit', form) });
 
     return (
-        <Login
+        <Signin
             formGroup={formGroup}
             forgotPassword={() => console.log('Esqueci minha senha')}
             signinWithGoogle={() => console.log('Logando com o google')}
