@@ -1,0 +1,9 @@
+.#{$pre}-link {
+    cursor: pointer;
+    text-decoration: underline;
+    transition: $animation;
+
+    &:hover {
+        opacity: .8;
+    }
+}

@@ -11,7 +11,7 @@
         appearance: none;
         outline: 0;
         cursor: pointer;
-        transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+        transition: all 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
 
         &::before {
             position: absolute;
@@ -31,7 +31,7 @@
         &:checked {
             color: var(--mode);
             border-color: var(--brand);
-            background: var(--brand);
+            background-image: var(--gradient-brand);
 
             &::before {
                 opacity: 1;

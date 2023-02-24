@@ -8,6 +8,7 @@
 
 // Animations
 @import "animation/slide";
+@import "animation/rotate";
 
 // Base stuff
 @import "base/fonts";
@@ -15,6 +16,7 @@
 @import "base/typography";
 
 // Components
+@import "components/link";
 @import "components/icon";
 @import "components/toast";
 @import "components/modal";
