@@ -12,16 +12,14 @@ const Slide = ({ children, direction = 'left', show }: IProps) => {
     const getDirection = () => { return `animation-slide-${direction}`; };
 
     return (
-        <div>
-            <CSSTransition
-                in={SHOW}
-                unmountOnExit
-                timeout={1000}
-                nodeRef={nodeRef}
-                classNames={getDirection()}>
-                <div ref={nodeRef}> {children} </div>
-            </CSSTransition>
-        </div>
+        <CSSTransition
+            in={SHOW}
+            unmountOnExit
+            timeout={1000}
+            nodeRef={nodeRef}
+            classNames={getDirection()}>
+            <div ref={nodeRef}> {children} </div>
+        </CSSTransition>
     );
 };
 
