@@ -1,11 +1,4 @@
-export interface IConfig {
-    length: number;
-    regex: RegExp;
-    mask: string;
-    example: string;
-}
-
-export interface IReturn { value: string; length: number }
+import { IConfig, IReturn } from './interface';
 
 export class Formatter {
     static config = {
