@@ -7,6 +7,7 @@ export interface IForm {
 }
 
 export interface IProps {
+    goToCreate: () => any;
     forgotPassword: () => any;
     signinWithGoogle: () => any;
     formGroup: FormGroup<IForm>;

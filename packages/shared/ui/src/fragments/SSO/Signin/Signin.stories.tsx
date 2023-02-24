@@ -21,6 +21,7 @@ const Template: ComponentStory<typeof Signin> = () => {
     return (
         <Signin
             formGroup={formGroup}
+            goToCreate={() => console.log('Criar conta')}
             forgotPassword={() => console.log('Esqueci minha senha')}
             signinWithGoogle={() => console.log('Logando com o google')}
         />

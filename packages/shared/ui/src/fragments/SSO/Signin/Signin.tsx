@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Slide } from '@animations';
+import Link from '@components/Link';
 import Form from '@components/Form';
 import Input from '@components/Input';
 import Button from '@components/Button';
@@ -10,11 +11,11 @@ import { IProps } from './interface';
 
 import './Signin.scss';
 
-const Signin = ({ formGroup, forgotPassword, signinWithGoogle }: IProps) => {
+const Signin = ({ formGroup, forgotPassword, signinWithGoogle, goToCreate }: IProps) => {
     return (
         <div className="signin">
-            <div className="container">
-                <Slide.Initial direction="right" show>
+            <Slide.Initial direction="right" show>
+                <div className="container">
                     <div className="content">
                         <div className="texts">
                             <h1>Hey, olá! 👋</h1>
@@ -40,9 +41,14 @@ const Signin = ({ formGroup, forgotPassword, signinWithGoogle }: IProps) => {
                         </div>
 
                         <Button fluid outline onClick={signinWithGoogle}>Entrar com o Google</Button>
+
+                        <div className="create">
+                            <p>Não possui conta?</p>
+                            <Link isExternal click={goToCreate}>Crie aqui</Link>
+                        </div>
                     </div>
-                </Slide.Initial>
-            </div>
+                </div>
+            </Slide.Initial>
         </div>
     );
 };
