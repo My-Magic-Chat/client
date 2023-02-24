@@ -6,6 +6,8 @@ export enum ETarget {
 
 export interface IProps {
     children: React.ReactNode;
-    target: ETarget;
-    url: string;
+    isExternal?: boolean;
+    click?: () => any;
+    target?: ETarget;
+    url?: string;
 }
