@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { IProps } from './interface';
+import Icon, { ESize } from '../Icon';
 
 import './Button.scss';
 
@@ -11,6 +12,7 @@ const Button = ({
     theme = 'brand',
     outline = false,
     disabled = false,
+    isLoading = false,
     ...props
 }: IProps) => {
     const cls = () => {
@@ -23,13 +25,19 @@ const Button = ({
         return arr.join(' ');
     };
 
+    const getContent = () => {
+        return isLoading
+            ? <Icon icon="loading" theme="mode" animation="rotate" size={ESize.BIG} style={{ marginTop: '5px'}}></Icon>
+            : children;
+    };
+
     return (
         <button
             {...props}
             type={type}
             className={cls()}
             disabled={disabled}
-        >{children}</button>
+        >{getContent()}</button>
     );
 };
 

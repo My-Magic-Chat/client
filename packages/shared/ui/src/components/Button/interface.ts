@@ -4,7 +4,8 @@ export interface IProps extends HTMLAttributes<HTMLButtonElement> {
     fluid?: boolean;
     outline?: boolean;
     disabled?: boolean;
+    isLoading?: boolean;
     children: React.ReactNode;
     theme?: 'brand' | 'accent';
-    readonly type?: 'submit' | 'button';
+    type?: 'submit' | 'button';
 }
