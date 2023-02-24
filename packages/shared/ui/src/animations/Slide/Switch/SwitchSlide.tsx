@@ -3,10 +3,8 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 import { IProps } from './interface';
 
-import '../Slide.scss';
-
 const SwitchSlide = ({ children, direction = 'left', identifier }: IProps) => {
-    const getDirection = () => { return `slide-${direction}`; };
+    const getDirection = () => { return `animation-slide-${direction}`; };
 
     return (
         <SwitchTransition mode={'out-in'}>
