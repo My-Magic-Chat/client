@@ -6,10 +6,8 @@
 
     padding: $distance;
 
-    @include for-mobile {
-        display: block;
-        height: 100%;
-        margin: auto;
+    @include for-tablet {
+       display: block;
     }
 
     .content {

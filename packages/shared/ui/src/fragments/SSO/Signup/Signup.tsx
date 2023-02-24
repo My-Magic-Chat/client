@@ -10,10 +10,10 @@ import { IProps } from './interface';
 
 import './Signup.scss';
 
-const Signup = ({ formGroup, signinWithGoogle, isLoading, goToCreate }: IProps) => {
+const Signup = ({ formGroup, signinWithGoogle, isLoading, goToSignin }: IProps) => {
     return (
-        <div className="signup">
-            <Slide.Initial direction="left" show>
+        <Slide.Initial direction="left" show>
+            <div className="signup">
                 <div className="content">
                     <div className="title">
                         <h1>Cadastrar</h1>
@@ -31,23 +31,23 @@ const Signup = ({ formGroup, signinWithGoogle, isLoading, goToCreate }: IProps) 
                     </div>
 
                     <Form formGroup={formGroup}>
-                        <Input controlName="firstName" label="Primeiro nome"/>
-                        <Input controlName="lastName" label="Último nome"/>
-                        <Input controlName="email" label="Email"/>
+                        <Input controlName="firstName" label="Primeiro nome" />
+                        <Input controlName="lastName" label="Último nome" />
+                        <Input controlName="email" label="Email" />
 
-                        <Input controlName="password" label="Senha" type="password"/>
-                        <Input controlName="confirmPassword" label="Confirme sua Senha" type="password"/>
+                        <Input controlName="password" label="Senha" type="password" />
+                        <Input controlName="confirmPassword" label="Confirme sua Senha" type="password" />
 
                         <Button type="submit" isLoading={isLoading} fluid>Continuar</Button>
                     </Form>
 
                     <div className="create">
                         <p>Já possui conta?</p>
-                        <Link isExternal click={goToCreate}>Entre aqui</Link>
+                        <Link isExternal click={goToSignin}>Entre aqui</Link>
                     </div>
                 </div>
-            </Slide.Initial>
-        </div>
+            </div>
+        </Slide.Initial>
     );
 };
 

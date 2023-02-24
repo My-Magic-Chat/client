@@ -10,7 +10,7 @@ export interface IForm {
 
 export interface IProps {
     isLoading: boolean;
-    goToCreate: () => any;
+    goToSignin: () => any;
     signinWithGoogle: () => any;
     formGroup: FormGroup<IForm>;
 }

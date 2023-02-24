@@ -45,7 +45,7 @@ const Template: ComponentStory<typeof Signup> = () => {
     return (
         <Signup
             formGroup={formGroup}
-            goToCreate={() => console.log('go to create')}
+            goToSignin={() => console.log('go to create')}
             signinWithGoogle={() => console.log('Logando com o google')}
             isLoading={IS_LOADING}
         />
