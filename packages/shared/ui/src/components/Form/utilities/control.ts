@@ -1,4 +1,4 @@
-import { Validator } from '@services/validator';
+import { Validator } from '@services/validator/validator';
 
 import { Control, IMessage, TType } from './interface';
 import { MESSAGES } from './messages';

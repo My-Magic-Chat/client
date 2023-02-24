@@ -1,4 +1,5 @@
 import { FormControl } from './control';
+import { FormGroup } from './group';
 
 export type AbstractControl<T> = { [key in keyof T]: FormControl<T[key]> }
 
@@ -33,6 +34,6 @@ export interface IMessage {
     required: (field: string) => string;
 }
 
-export interface Validator {
-    [x: string]: (form: any) => void;
+export interface Validator<T> {
+    [x: string]: (form: FormGroup<T>) => void;
 }

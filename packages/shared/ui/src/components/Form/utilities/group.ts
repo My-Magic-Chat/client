@@ -6,9 +6,9 @@ export class FormGroup<T> {
     private _controls!: AbstractControl<T>;
 
     public handle: Handle<T>;
-    public validator: Validator;
+    public validator: Validator<T>;
 
-    constructor(controls: AbstractControl<T>, handle: Handle<T> = {}, validator: Validator = {}) {
+    constructor(controls: AbstractControl<T>, handle: Handle<T> = {}, validator: Validator<T> = {}) {
         this.handle = handle;
         this.controls = controls;
         this.validator = validator;

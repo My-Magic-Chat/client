@@ -2,7 +2,7 @@ import { FormHTMLAttributes } from 'react';
 
 import { FormGroup } from './utilities/group';
 
-export { Handle } from './utilities/interface';
+export { Handle, Validator } from './utilities/interface';
 
 export interface IProps extends FormHTMLAttributes<HTMLFormElement> {
     log?: boolean;
