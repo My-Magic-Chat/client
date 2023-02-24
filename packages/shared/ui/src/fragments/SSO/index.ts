@@ -1,2 +1,4 @@
-export { Login } from './Signin';
+export { Signin } from './Signin';
+export { Signup } from './Signup';
+
 export * from './interface';
