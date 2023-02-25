@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { IProps, ESize } from './interface';
+import Sprite from '@client/design/dist/icons/sprite.svg';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const logo = require('@client/design/dist/icons/sprite.svg') as string;
+import { IProps, ESize } from './interface';
 
 import './Icon.scss';
 
@@ -19,7 +18,7 @@ const Icon = ({ size = ESize.MID, icon, theme, animation, ...props }: IProps) =>
 
     return (
         <svg width={size} height={size} className={cls()} {...props}>
-            <use xlinkHref={`${logo}#${icon}`}></use>
+            <use xlinkHref={`${Sprite}#${icon}`}></use>
         </svg>
     );
 };
