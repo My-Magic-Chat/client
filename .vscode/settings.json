@@ -14,5 +14,7 @@
         "origin": "Core",
         "setup": "Global",
         "business": "Rules",
+        "http": "Serverless",
+        "window": "Vm"
     }
 }
