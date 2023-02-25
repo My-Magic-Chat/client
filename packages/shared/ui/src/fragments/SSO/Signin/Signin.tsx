@@ -13,8 +13,8 @@ import './Signin.scss';
 
 const Signin = ({ formGroup, forgotPassword, signinWithGoogle, goToCreate }: IProps) => {
     return (
-        <div className="signin">
-            <Slide.Initial direction="right" show>
+        <Slide.Initial direction="right" show>
+            <div className="signin-root">
                 <div className="container">
                     <div className="content">
                         <div className="texts">
@@ -44,12 +44,12 @@ const Signin = ({ formGroup, forgotPassword, signinWithGoogle, goToCreate }: IPr
 
                         <div className="create">
                             <p>Não possui conta?</p>
-                            <Link isExternal click={goToCreate}>Crie aqui</Link>
+                            <Link isExternal click={goToCreate}>Crie aqui!</Link>
                         </div>
                     </div>
                 </div>
-            </Slide.Initial>
-        </div>
+            </div>
+        </Slide.Initial>
     );
 };
 
