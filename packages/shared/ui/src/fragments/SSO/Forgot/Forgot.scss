@@ -1,0 +1,28 @@
+.forgot-root {
+    @include center;
+
+    height: 100vh;
+    border-radius: 4px;
+
+    padding: $distance;
+
+    @include for-tablet {
+        display: block;
+    }
+
+    .content {
+        width: 450px;
+
+        @include for-tablet {
+            width: 100%;
+        }
+
+        .signin {
+            @include center;
+
+            p {
+                margin-right: 5px;
+            }
+        }
+    }
+}
