@@ -13,7 +13,7 @@ import './Signup.scss';
 const Signup = ({ formGroup, signinWithGoogle, isLoading, goToSignin }: IProps) => {
     return (
         <Slide.Initial direction="left" show>
-            <div className="signup">
+            <div className="signup-root">
                 <div className="content">
                     <div className="title">
                         <h1>Cadastrar</h1>
@@ -43,7 +43,7 @@ const Signup = ({ formGroup, signinWithGoogle, isLoading, goToSignin }: IProps) 
 
                     <div className="create">
                         <p>Já possui conta?</p>
-                        <Link isExternal click={goToSignin}>Entre aqui</Link>
+                        <Link isExternal click={goToSignin}>Entre aqui!</Link>
                     </div>
                 </div>
             </div>
