@@ -16,5 +16,8 @@
         "business": "Rules",
         "http": "Serverless",
         "window": "Vm"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     }
 }

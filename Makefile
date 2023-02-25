@@ -45,18 +45,16 @@ build-ui:
 build-setup:
 	$(call run_in_workspace,$(SETUP),build:prod)
 
-build-service:
+build-services:
 	$(call run_in_workspace,$(SERVICE),build:prod)
 
 build-design:
 	$(call run_in_workspace,$(DESIGN),build:default)
 
-build-dependencies: build-design build-ui
+build-dependencies: build-design build-ui build-setup build-services
 
 build-auth:
 	$(call run_in_workspace,$(AUTH),build)
-
-build-all-auth: build-dependencies build-auth
 
 build-all: build-dependencies build-auth
 

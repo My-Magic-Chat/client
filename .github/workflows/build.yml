@@ -68,4 +68,7 @@ jobs:
       - name: Build AUTH and dependencies
         if: steps.cache-build.outputs.cache-hit != 'true'
         run: |
-          if [[ ${{ inputs.PROJECT == 'AUTH' }} = true ]]; then make build-all-auth; fi
+          if [[ ${{ inputs.PROJECT == 'AUTH' }} = true ]]; then
+            make build-dependencies;
+            make build-auth;
+          fi
