@@ -24,6 +24,7 @@
     "@client/lint": "*",
     "@client/setup": "*",
     "@client/design": "*",
+    "@client/services": "*",
     "@types/node": "^17.0.24",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
