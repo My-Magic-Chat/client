@@ -13,8 +13,8 @@ const Checkbox = ({ children, controlName }: IProps) => {
 
     return (
         <div className="ds-checkbox">
-            <input type="checkbox" id="todo" name="todo" checked={control?.value} onChange={handle} />
-            <label htmlFor="todo" data-content="Get out of bed">{children}</label>
+            <input type="checkbox" id={controlName} name={controlName} checked={control?.value} onChange={handle} />
+            <label htmlFor={controlName}>{children}</label>
         </div>
     );
 };
