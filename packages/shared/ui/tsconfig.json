@@ -5,7 +5,7 @@
     "target": "ES6",
     "outDir": "dist",
     "module": "ESNext",
-    "declarationDir": "types",
+    "declarationDir": "src",
     "moduleResolution": "node",
     "paths": {
       "@mocks/*": [
@@ -21,18 +21,27 @@
         "src/animations"
       ]
     },
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
-    "esModuleInterop": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "declaration": true,
+    "strict": true,
     "sourceMap": true,
-    "strict": true
+    "declaration": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
   },
+  "include": [
+    "src/",
+    "types/custom.d.ts"
+  ],
   "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "**/stories/**",
+    "**/__mocks__",
     "**/tests",
     "**/*.(test|spec).tsx",
   ]

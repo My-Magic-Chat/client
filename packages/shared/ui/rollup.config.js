@@ -10,15 +10,14 @@ import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 
-// eslint-disable-next-line
-const packageJson = require('./package.json');
+import packageJson from './package.json';
 
 const brand = process.env.ROLLUP_THEME || 'default';
 
 export default [
     {
         input: 'src/index.ts',
-        external: [...Object.keys(packageJson.peerDependencies)],
+        external: [...Object.keys(packageJson.peerDependencies), '@client/design'],
         output: [
             {
                 file: packageJson.main,
@@ -68,9 +67,9 @@ export default [
         ],
     },
     {
-        input: 'dist/esm/index.d.ts',
+        input: 'dist/esm/src/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],
         plugins: [dts()],
-        external: [/\.scss$/],
+        external: ['react-dom', /\.scss$/],
     },
 ];
