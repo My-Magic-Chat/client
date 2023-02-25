@@ -4,7 +4,7 @@ RUN:=yarn
 UI:=ui
 SETUP:=setup
 DESIGN:=design
-SERVICE:=service
+SERVICE:=services
 
 # WEB #
 AUTH:=auth
@@ -96,7 +96,7 @@ test-ui:
 test-setup:
 	$(call run_in_workspace,$(SETUP),test)
 
-test-service:
+test-services:
 	$(call run_in_workspace,$(SERVICE),test)
 
 # ------------------ LINT ------------------ #
