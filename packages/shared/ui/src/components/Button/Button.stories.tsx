@@ -38,6 +38,12 @@ export default {
             control: { type: 'boolean' },
             options: [true, false],
             description: 'Make disabled button'
+        },
+        isLoading: {
+            name: 'isLoading',
+            control: { type: 'boolean' },
+            options: [true, false],
+            description: 'Make loading button'
         }
     }
 } as ComponentMeta<typeof Button>;
@@ -48,6 +54,7 @@ const Template: ComponentStory<typeof Button> = (args: IProps) => <Button
     theme={args.theme}
     fluid={args.fluid}
     disabled={args.disabled}
+    isLoading={args.isLoading}
     onClick={() => console.log('Logando...')} />;
 
 export const Primary = Template.bind({});
