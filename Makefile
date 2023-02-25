@@ -2,6 +2,7 @@ RUN:=yarn
 
 # LIBS #
 UI:=ui
+SETUP:=setup
 DESIGN:=design
 
 # WEB #
@@ -39,6 +40,9 @@ dev-auth:
 
 build-ui:
 	$(call run_in_workspace,$(UI),build)
+
+build-setup:
+	$(call run_in_workspace,$(SETUP),build:prod)
 
 build-design:
 	$(call run_in_workspace,$(DESIGN),build:default)
