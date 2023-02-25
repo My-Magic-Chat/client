@@ -8,5 +8,11 @@
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "material-icon-theme.folders.associations": {
+        "ui": "Helper",
+        "origin": "Core",
+        "setup": "Global",
+        "business": "Rules",
     }
 }
