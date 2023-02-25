@@ -1,0 +1,1 @@
+export { getByDescription } from './enum';
