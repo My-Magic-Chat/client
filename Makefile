@@ -4,6 +4,7 @@ RUN:=yarn
 UI:=ui
 SETUP:=setup
 DESIGN:=design
+SERVICE:=service
 
 # WEB #
 AUTH:=auth
@@ -43,6 +44,9 @@ build-ui:
 
 build-setup:
 	$(call run_in_workspace,$(SETUP),build:prod)
+
+build-service:
+	$(call run_in_workspace,$(SERVICE),build:prod)
 
 build-design:
 	$(call run_in_workspace,$(DESIGN),build:default)
@@ -88,6 +92,12 @@ clean-all: clean-dependencies clean-builds
 
 test-ui:
 	$(call run_in_workspace,$(UI),test)
+
+test-setup:
+	$(call run_in_workspace,$(SETUP),test)
+
+test-service:
+	$(call run_in_workspace,$(SERVICE),test)
 
 # ------------------ LINT ------------------ #
 
