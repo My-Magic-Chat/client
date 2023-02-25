@@ -50,6 +50,8 @@ build-auth:
 
 build-all-auth: build-dependencies build-auth
 
+build-all: build-dependencies build-auth
+
 # ------------------ WATCH ------------------ #
 
 watch-design:
