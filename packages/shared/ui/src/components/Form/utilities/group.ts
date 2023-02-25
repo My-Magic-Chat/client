@@ -21,8 +21,8 @@ export class FormGroup<T> {
         this._controls = { ...this._controls, ...control };
     }
 
-    public get values(): any {
-        const values: { [key: string]: any } = {};
+    public get values(): Partial<T> {
+        const values: Partial<T> = {};
 
         this.eachControl((control, key) => ({ [key as string]: control.value }))
             .forEach(control => { for (const prop in control) { values[prop] = control[prop]; } });
