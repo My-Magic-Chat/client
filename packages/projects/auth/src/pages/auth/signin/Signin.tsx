@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Fragment, FormGroup, FormControl } from '@client/ui';
@@ -6,6 +7,8 @@ import './Signin.scss';
 
 function Signin() {
     const navigate = useNavigate();
+
+    useEffect(() => { document.title = 'Entrar'; }, []);
 
     const formGroup = new FormGroup<Fragment.SSO.SIGNIN.IForm>({
         email: new FormControl({ value: 'teste@teste.com', type: 'email', required: true }),

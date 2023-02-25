@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Handle, Validator, Fragment, FormGroup, FormControl } from '@client/ui';
@@ -8,6 +8,8 @@ import './Signup.scss';
 function Signup() {
     const navigate = useNavigate();
     const [IS_LOADING, SET_IS_LOADING] = useState(false);
+
+    useEffect(() => { document.title = 'Cadastrar'; }, []);
 
     const handle: Handle<Fragment.SSO.SIGNUP.IForm> = {
         submit: (form) => {
@@ -37,7 +39,7 @@ function Signup() {
         confirmPassword: new FormControl({ value: '123123123', type: 'password', required: true })
     }, handle, validator);
 
-    const goToSignin = () => navigate('/signup', { replace: false });
+    const goToSignin = () => navigate('/', { replace: false });
 
     const signinWithGoogle = () => console.log('signinWithGoogle');
 
