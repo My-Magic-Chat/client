@@ -4,7 +4,7 @@ RUN:=yarn
 UI:=ui
 SETUP:=setup
 DESIGN:=design
-SERVICE:=services
+SERVICES:=services
 
 # WEB #
 AUTH:=auth
@@ -46,7 +46,7 @@ build-setup:
 	$(call run_in_workspace,$(SETUP),build:prod)
 
 build-services:
-	$(call run_in_workspace,$(SERVICE),build:prod)
+	$(call run_in_workspace,$(SERVICES),build:prod)
 
 build-design:
 	$(call run_in_workspace,$(DESIGN),build:default)
@@ -62,6 +62,12 @@ build-all: build-dependencies build-auth
 
 watch-design:
 	$(call run_in_workspace,$(DESIGN),watch)
+
+watch-setup:
+	$(call run_in_workspace,$(SETUP),build:watch)
+
+watch-services:
+	$(call run_in_workspace,$(SERVICES),build:watch)
 
 # ------------------ CLEAR ------------------ #
 
@@ -95,12 +101,14 @@ test-setup:
 	$(call run_in_workspace,$(SETUP),test)
 
 test-services:
-	$(call run_in_workspace,$(SERVICE),test)
+	$(call run_in_workspace,$(SERVICES),test)
 
 # ------------------ LINT ------------------ #
 
 lint:
 	$(call run_in_workspace,$(UI),lint)
 	$(call run_in_workspace,$(AUTH),lint)
+	$(call run_in_workspace,$(SETUP),lint)
+	$(call run_in_workspace,$(SERVICES),lint)
 
 # ------------------ Lighthouse CI ------------------ #
