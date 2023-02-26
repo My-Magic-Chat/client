@@ -12,7 +12,7 @@ function Signin() {
     useEffect(() => { document.title = 'Entrar'; }, []);
 
     const handle: Handle<Fragment.SSO.SIGNIN.IForm> = {
-        submit: (form) => {
+        submit: () => {
             try {
                 throw new core.Handler({ path: 'SSO', id: 403 }, 'api');
             } catch (error) {
