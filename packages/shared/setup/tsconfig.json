@@ -32,6 +32,11 @@
     ],
     "exclude": [
         "node_modules",
-        "src/**/__mocks__/**"
+        "build",
+        "dist",
+        "**/stories/**",
+        "**/__mocks__",
+        "**/tests",
+        "**/*.(test|spec).tsx"
     ]
 }
