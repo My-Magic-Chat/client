@@ -1,4 +1,4 @@
-import Local from './Local';
+import Local from './local';
 
 describe('Local Module', () => {
     const defaultValue = 'Testando módulo Local storage';

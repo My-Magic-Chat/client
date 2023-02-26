@@ -51,7 +51,7 @@ build-services:
 build-design:
 	$(call run_in_workspace,$(DESIGN),build:default)
 
-build-dependencies: build-design build-ui build-setup build-services
+build-dependencies: build-design build-setup build-services build-ui
 
 build-auth:
 	$(call run_in_workspace,$(AUTH),build)

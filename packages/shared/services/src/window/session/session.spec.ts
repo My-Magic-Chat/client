@@ -1,4 +1,4 @@
-import Session from './Session';
+import Session from './session';
 
 describe('Session Module', () => {
     const defaultValue = 'Testando módulo Session storage';
