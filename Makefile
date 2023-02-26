@@ -5,6 +5,7 @@ UI:=ui
 SETUP:=setup
 DESIGN:=design
 SERVICES:=services
+BUSINESS:=business
 
 # WEB #
 AUTH:=auth
@@ -48,10 +49,13 @@ build-setup:
 build-services:
 	$(call run_in_workspace,$(SERVICES),build:prod)
 
+build-business:
+	$(call run_in_workspace,$(BUSINESS),build:prod)
+
 build-design:
 	$(call run_in_workspace,$(DESIGN),build:default)
 
-build-dependencies: build-design build-setup build-services build-ui
+build-dependencies: build-design build-setup build-services build-business build-ui
 
 build-auth:
 	$(call run_in_workspace,$(AUTH),build)
@@ -68,6 +72,9 @@ watch-setup:
 
 watch-services:
 	$(call run_in_workspace,$(SERVICES),build:watch)
+
+watch-business:
+	$(call run_in_workspace,$(BUSINESS),build:watch)
 
 # ------------------ CLEAR ------------------ #
 
@@ -102,6 +109,9 @@ test-setup:
 
 test-services:
 	$(call run_in_workspace,$(SERVICES),test)
+
+test-business:
+	$(call run_in_workspace,$(BUSINESS),test)
 
 # ------------------ LINT ------------------ #
 
