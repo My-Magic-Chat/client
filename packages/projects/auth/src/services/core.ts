@@ -1,7 +1,8 @@
-import { Base, Cookies, Handler, Local, Session } from '@client/services';
+import { Base, Cookies, Handler, Local, Session, Http } from '@client/services';
 import { Environment } from '@client/setup';
 
 class Core {
+    public http = Http;
     public local = Local;
     public cookies = Cookies;
     public session = Session;
