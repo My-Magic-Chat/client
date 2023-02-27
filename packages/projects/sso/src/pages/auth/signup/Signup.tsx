@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import core from 'src/services/core';
 
 import { Handle, Validator, Fragment, FormGroup, FormControl } from '@client/ui';
 
@@ -14,8 +15,10 @@ function Signup() {
     const handle: Handle<Fragment.SSO.SIGNUP.IForm> = {
         submit: (form) => {
             SET_IS_LOADING(true);
-            console.log('SUBMIT', form);
-            setTimeout(() => { SET_IS_LOADING(false); }, 1000);
+            core.sso.signUp(form.values.email, form.values.password)
+                .then(r => console.log('RESULT', r))
+                .catch(e => console.log('ERROR', e))
+                .finally(() => SET_IS_LOADING(false));
         }
     };
 
@@ -32,11 +35,11 @@ function Signup() {
     };
 
     const formGroup = new FormGroup<Fragment.SSO.SIGNUP.IForm>({
-        lastName: new FormControl({ value: 'teste', required: true }),
-        firstName: new FormControl({ value: 'teste', required: true }),
-        email: new FormControl({ value: 'teste@teste.com', type: 'email', required: true }),
-        password: new FormControl({ value: '123123123', type: 'password', required: true }),
-        confirmPassword: new FormControl({ value: '123123123', type: 'password', required: true })
+        firstName: new FormControl({ value: 'Leonardo', required: true }),
+        lastName: new FormControl({ value: 'Gonçalves', required: true }),
+        email: new FormControl({ value: 'leo@mymagicchat.com', type: 'email', required: true }),
+        password: new FormControl({ value: 'Testando4', type: 'password', required: true }),
+        confirmPassword: new FormControl({ value: 'Testando4', type: 'password', required: true })
     }, handle, validator);
 
     const goToSignin = () => navigate('/', { replace: false });

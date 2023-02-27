@@ -1,5 +1,5 @@
 {
-  "name": "@client/auth",
+  "name": "@client/sso",
   "version": "0.1.0",
   "private": true,
   "author": "leonardo.goncalves <leogoncalves.contato@gmail.com>",
