@@ -27,7 +27,7 @@ const Button = ({
 
     const getContent = () => {
         return isLoading
-            ? <Icon icon="loading" theme="mode" animation="rotate" size={ESize.BIG} style={{ marginTop: '5px'}}></Icon>
+            ? <Icon icon="loading" theme="gray" animation="rotate" size={ESize.BIG} style={{ marginTop: '5px'}}></Icon>
             : children;
     };
 
