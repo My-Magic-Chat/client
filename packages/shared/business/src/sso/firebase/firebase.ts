@@ -1,6 +1,8 @@
 import * as firebase from 'firebase/auth';
 import { FirebaseApp } from 'firebase/app';
 
+import { Handler } from '@client/services';
+
 import { IError } from './interface';
 
 export class Firebase {
@@ -11,21 +13,17 @@ export class Firebase {
     public async signIn(email: string, password: string): Promise<firebase.UserCredential> {
         return firebase.signInWithEmailAndPassword(this.auth, email, password)
             .then(res => res)
-            .catch((e: IError) => {
-                console.log('deu erro - signIn');
-            }) as any;
+            .catch(e => { throw new Handler({ path: 'SSO', id: e.code }, 'api'); });
     }
 
     public async signUp(email: string, password: string): Promise<firebase.UserCredential> {
         return firebase.createUserWithEmailAndPassword(this.auth, email, password)
             .then(res => res)
-            .catch((e: IError) => {
-                console.log('deu erro - signUp');
-            }) as any;
+            .catch(e => { throw new Handler({ path: 'SSO', id: e.code }, 'api'); });
     }
 
     public async resetPass(email: string) {
-        await firebase.sendPasswordResetEmail(this.auth, email)
+        firebase.sendPasswordResetEmail(this.auth, email)
             .then(res => res)
             .catch((e: IError) => {
                 console.log('deu erro - resetPass');

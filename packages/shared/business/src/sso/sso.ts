@@ -1,18 +1,29 @@
 import { FirebaseApp } from 'firebase/app';
+import * as firebase from 'firebase/auth';
 
-import {Firebase} from './firebase';
+import { Firebase } from './firebase';
 
-class SSO {
+export class SSO {
     protected firebase: Firebase;
-    protected authApp: FirebaseApp;
-    
-    constructor() {
-        this.initialize();
-        this.firebase = new Firebase(this.authApp);
+
+    constructor(app: FirebaseApp) {
+        this.firebase = new Firebase(app);
     }
 
-    protected initialize() {
-        // const credentials = new Credentials().firebase;
-        // this.authApp = initializeApp(credentials);
+    public async signOut(): Promise<void> {
+        return this.firebase.signOut()
+            .then(() => { console.log('LOGOUT'); });
+    }
+
+    public async signIn(email: string, password: string): Promise<firebase.UserCredential> {
+        return this.firebase.signIn(email, password);
+    }
+
+    public async signUp(email: string, password: string): Promise<firebase.UserCredential> {
+        return this.firebase.signUp(email, password);
+    }
+
+    public async forgot(email: string): Promise<void> {
+        return this.firebase.resetPass(email);
     }
 }

@@ -16,8 +16,8 @@
     "lint": "eslint --ext .ts . --ignore-pattern '/dist'"
   },
   "dependencies": {
-    "@firebase/auth": "^0.21.3",
-    "firebase": "^9.17.1",
+    "@firebase/auth": "^0.19.9",
+    "firebase": "^9.6.7",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
