@@ -8,7 +8,7 @@ SERVICES:=services
 BUSINESS:=business
 
 # WEB #
-AUTH:=auth
+SSO:=sso
 
 # ------------------------------------------------------------------------------------ #
 
@@ -35,8 +35,8 @@ install-immutable:
 dev-ui:
 	$(call run_in_workspace,$(UI),storybook)
 
-dev-auth:
-	$(call run_in_workspace,$(AUTH),start)
+dev-sso:
+	$(call run_in_workspace,$(SSO),start)
 
 # ------------------ BUILD ------------------ #
 
@@ -57,10 +57,10 @@ build-design:
 
 build-dependencies: build-design build-setup build-services build-business build-ui
 
-build-auth:
-	$(call run_in_workspace,$(AUTH),build)
+build-sso:
+	$(call run_in_workspace,$(SSO),build)
 
-build-all: build-dependencies build-auth
+build-all: build-dependencies build-sso
 
 # ------------------ WATCH ------------------ #
 
@@ -75,6 +75,9 @@ watch-services:
 
 watch-business:
 	$(call run_in_workspace,$(BUSINESS),build:watch)
+
+watch-ui:
+	$(call run_in_workspace,$(UI),watch)
 
 # ------------------ CLEAR ------------------ #
 
@@ -95,7 +98,10 @@ endef
 clean-dependencies:
 	rm -Rf ./node_modules
 	$(call delete_dependencies,shared/$(UI))
+	$(call delete_dependencies,shared/$(BUSINESS))
+	$(call delete_dependencies,shared/$(SERVICES))
 	$(call delete_dependencies,shared/$(DESIGN))
+	$(call delete_dependencies,projects/$(SSO))
 
 clean-all: clean-dependencies clean-builds
 
@@ -117,7 +123,7 @@ test-business:
 
 lint:
 	$(call run_in_workspace,$(UI),lint)
-	$(call run_in_workspace,$(AUTH),lint)
+	$(call run_in_workspace,$(SSO),lint)
 	$(call run_in_workspace,$(SETUP),lint)
 	$(call run_in_workspace,$(SERVICES),lint)
 
