@@ -12,6 +12,9 @@ on:
       PROJECT:
         required: true
         type: string
+      HOSTING:
+        required: true
+        type: string
 
 jobs:
   firebase-deploy:
@@ -46,7 +49,7 @@ jobs:
       - name: Firebase Deploy
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --project=staging --only hosting
+          args: deploy --project=staging --only hosting:${{ inputs.HOSTING }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_PATH: ${{ secrets.PROJECT_PATH }}

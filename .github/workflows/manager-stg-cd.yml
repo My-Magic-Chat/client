@@ -27,5 +27,6 @@ jobs:
       ENVIRONMENT: STG MANAGER
       BUILD_ENV: STG
       PROJECT: MANAGER
+      HOSTING: stg-manager
     secrets: inherit
 
