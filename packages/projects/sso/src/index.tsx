@@ -1,17 +1,21 @@
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 
+import { ToastProvider } from '@client/ui';
+
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 import '@client/ui/dist/esm/default/index.css';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <App />
+        <ToastProvider>
+            <App />
+        </ToastProvider>
     </React.StrictMode>
 );
 
