@@ -19,9 +19,11 @@ export default {
 } as ComponentMeta<typeof InitialSlide>;
 
 const Template: ComponentStory<typeof InitialSlide> = (args: IProps) => {
+    const [show, setShow] = useState(true);
     return (
         <>
-            <InitialSlide direction={args.direction} show={true}>
+            <button onClick={() => setShow(!show)}>toggle</button>
+            <InitialSlide direction={args.direction} show={show}>
                 <h1>Fading at Initial Mount</h1>
             </InitialSlide>
         </>

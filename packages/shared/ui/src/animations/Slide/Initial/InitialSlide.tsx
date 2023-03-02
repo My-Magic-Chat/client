@@ -7,7 +7,7 @@ const Slide = ({ children, direction = 'left', show }: IProps) => {
     const [SHOW, SET_SHOW] = useState(false);
     const nodeRef = useRef(null);
 
-    useEffect(() => { SET_SHOW(show); }, [SHOW]);
+    useEffect(() => { SET_SHOW(show); }, [show]);
 
     const getDirection = () => { return `animation-slide-${direction}`; };
 
