@@ -9,6 +9,7 @@ BUSINESS:=business
 
 # WEB #
 SSO:=sso
+MANAGER:=manager
 
 # ------------------------------------------------------------------------------------ #
 
@@ -38,6 +39,9 @@ dev-ui:
 dev-sso:
 	$(call run_in_workspace,$(SSO),start)
 
+dev-manager:
+	$(call run_in_workspace,$(MANAGER),start)
+
 # ------------------ BUILD ------------------ #
 
 build-ui:
@@ -59,6 +63,9 @@ build-dependencies: build-design build-setup build-services build-business build
 
 build-sso:
 	$(call run_in_workspace,$(SSO),build)
+
+build-manager:
+	$(call run_in_workspace,$(MANAGER),build)
 
 build-all: build-dependencies build-sso
 
