@@ -18,6 +18,7 @@ jobs:
       ENVIRONMENT: STG MANAGER
       BUILD_ENV: STG
       PROJECT: MANAGER
+      COMMAND: build-manager
     secrets: inherit
 
   deploy:

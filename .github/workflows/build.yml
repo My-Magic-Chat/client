@@ -12,6 +12,9 @@ on:
       PROJECT:
         required: true
         type: string
+      COMMAND:
+        required: true
+        type: string
 
 jobs:
   lint-and-build:
@@ -75,7 +78,5 @@ jobs:
       - name: Build AUTH and dependencies
         if: steps.cache-build.outputs.cache-hit != 'true'
         run: |
-          if [[ ${{ inputs.PROJECT == 'AUTH' }} = true ]]; then
-            make build-dependencies;
-            make build-sso;
-          fi
+          make build-dependencies;
+          make build-${{ inputs.COMMAND }};

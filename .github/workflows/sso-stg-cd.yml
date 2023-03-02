@@ -18,6 +18,7 @@ jobs:
       ENVIRONMENT: STG AUTH
       BUILD_ENV: STG
       PROJECT: AUTH
+      COMMAND: build-sso
     secrets: inherit
 
   deploy:
