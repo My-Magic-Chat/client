@@ -10,8 +10,8 @@ describe('Feedback', () => {
         });
 
         it('should get api message error', () => {
-            const message = feedback.message({ id: 403, path: 'SSO' });
-            expect(message).toBe(MESSAGES.API.SSO[403]);
+            const message = feedback.message({ id: 'auth/too-many-requests', path: 'SSO' });
+            expect(message).toBe(MESSAGES.API.SSO['auth/too-many-requests']);
         });
 
         it('should get default message when there is no custom message', () => {
