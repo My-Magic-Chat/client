@@ -12,7 +12,7 @@ export enum ESize {
     BIG = '24px'
 }
 
-type TTheme = 'brand' | 'accent' | 'mode' | 'text' | 'gray' | 'green' | 'red' | 'blue' | 'yellow';
+export type TTheme = 'brand' | 'accent' | 'mode' | 'text' | 'gray' | 'green' | 'red' | 'blue' | 'yellow';
 
 export type TIcon =
     'copy'
