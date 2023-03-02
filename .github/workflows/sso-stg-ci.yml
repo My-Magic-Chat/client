@@ -1,4 +1,4 @@
-name: Auth - STG CI
+name: SSO - STG CI
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
     paths:
       - 'packages/e2e/**'
       - 'packages/shared/**'
-      - 'packages/projects/auth/**'
+      - 'packages/projects/sso/**'
 
   workflow_dispatch:
 

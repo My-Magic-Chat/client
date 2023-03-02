@@ -1,0 +1,39 @@
+name: Manager - STG CI
+
+on:
+  pull_request:
+    branches:
+      - "*"
+    paths:
+      - 'packages/e2e/**'
+      - 'packages/shared/**'
+      - 'packages/projects/manager/**'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      ENVIRONMENT: STG AUTH
+      BUILD_ENV: STG
+      PROJECT: AUTH
+    secrets: inherit
+
+  unit-tests:
+    needs: [build]
+    uses: ./.github/workflows/unit-tests.yml
+    with:
+      ENVIRONMENT: STG AUTH
+      BUILD_ENV: STG
+      PROJECT: AUTH
+    secrets: inherit
+
+  deploy:
+    needs: [build]
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ENVIRONMENT: STG AUTH
+      BUILD_ENV: STG
+      PROJECT: AUTH
+    secrets: inherit

@@ -1,4 +1,4 @@
-name: Auth - STG CD
+name: SSO - STG CD
 
 on:
   push:
