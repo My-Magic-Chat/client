@@ -16,8 +16,8 @@ export class Timer {
     private get start() { return this._start; }
     private set start(value: number) { this._start = value; }
 
-    private get remaining() { return this._remaining; }
-    private set remaining(value: number) { this._remaining = value; }
+    public get remaining() { return this._remaining; }
+    public set remaining(value: number) { this._remaining = value; }
 
     public pause() {
         window.clearTimeout(this.id);
