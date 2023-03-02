@@ -11,7 +11,7 @@ function Signin() {
     const toastService = useToast();
 
     const [IS_LOADING, SET_IS_LOADING] = useState<boolean>(false);
-    const [IS_LOADING_GOOGLE, SET_IS_LOADING_GOOGLE] = useState<boolean>(false);
+    const [IS_LOADING_GOOGLE] = useState<boolean>(false);
 
     useEffect(() => { document.title = 'Entrar'; }, []);
 

@@ -1,4 +1,3 @@
-import * as firebase from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 
 import { Base, Cookies, Handler, Local, Session, Http } from '@client/services';
