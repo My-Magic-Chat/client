@@ -3,7 +3,7 @@ name: SSO - STG CI
 on:
   pull_request:
     branches:
-      - teste
+      - '*'
     paths:
       - 'packages/e2e/**'
       - 'packages/shared/**'

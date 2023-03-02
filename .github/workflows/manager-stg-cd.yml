@@ -3,11 +3,11 @@ name: Manager - STG CD
 on:
   push:
     branches:
-      - feat/manager
-    # paths:
-    #   - 'packages/e2e/**'
-    #   - 'packages/shared/**'
-    #   - 'packages/projects/manager/**'
+      - master
+    paths:
+      - 'packages/e2e/**'
+      - 'packages/shared/**'
+      - 'packages/projects/manager/**'
 
   workflow_dispatch:
 
