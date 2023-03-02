@@ -3,11 +3,11 @@ name: Manager - STG CD
 on:
   push:
     branches:
-      - master
-    paths:
-      - 'packages/e2e/**'
-      - 'packages/shared/**'
-      - 'packages/projects/auth/**'
+      - feat/manager
+    # paths:
+    #   - 'packages/e2e/**'
+    #   - 'packages/shared/**'
+    #   - 'packages/projects/manager/**'
 
   workflow_dispatch:
 
@@ -15,17 +15,17 @@ jobs:
   build:
     uses: ./.github/workflows/build.yml
     with:
-      ENVIRONMENT: STG AUTH
+      ENVIRONMENT: STG MANAGER
       BUILD_ENV: STG
-      PROJECT: AUTH
+      PROJECT: MANAGER
     secrets: inherit
 
   deploy:
     needs: [build]
     uses: ./.github/workflows/deploy.yml
     with:
-      ENVIRONMENT: STG AUTH
+      ENVIRONMENT: STG MANAGER
       BUILD_ENV: STG
-      PROJECT: AUTH
+      PROJECT: MANAGER
     secrets: inherit
 

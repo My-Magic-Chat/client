@@ -3,11 +3,11 @@ name: SSO - STG CD
 on:
   push:
     branches:
-      - master
-    paths:
-      - 'packages/e2e/**'
-      - 'packages/shared/**'
-      - 'packages/projects/auth/**'
+      - feat/manager
+    # paths:
+    #   - 'packages/e2e/**'
+    #   - 'packages/shared/**'
+    #   - 'packages/projects/sso/**'
 
   workflow_dispatch:
 
