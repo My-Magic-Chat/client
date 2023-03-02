@@ -22,5 +22,8 @@
     },
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///c%3A/Users/Leonardo/Desktop/Projetos/mymagicchat/client/.github/workflows/deploy.yml"
     }
 }
