@@ -6,7 +6,7 @@
     "stg-mymagicchat": {
       "hosting": {
         "stg-sso": [
-          "stg-mymagicchat"
+          "stg-sso"
         ]
       }
     }
