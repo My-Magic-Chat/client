@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import core from 'src/services/core';
 
-import { Fragment, Handle, FormGroup, FormControl } from '@client/ui';
+import { Fragment, Handle, FormGroup, FormControl, Toast, useToast } from '@client/ui';
+
 
 import './Forgot.scss';
 
 function Forgot() {
     const navigate = useNavigate();
+    const toastService = useToast();
     const [IS_LOADING, SET_IS_LOADING] = useState(false);
 
     useEffect(() => { document.title = 'Esqueci minha senha'; }, []);
@@ -14,13 +17,25 @@ function Forgot() {
     const handle: Handle<Fragment.SSO.FORGOT.IForm> = {
         submit: (form) => {
             SET_IS_LOADING(true);
-            console.log('SUBMIT', form);
-            setTimeout(() => { SET_IS_LOADING(false); }, 1000);
+            core.sso.forgot(form.values.email)
+                .then(r => console.log('result', r))
+                .catch(e => {
+                    const toast = new Toast({
+                        show: true,
+                        mode: 'danger',
+                        autoClose: true,
+                        description: e.message,
+                        title: 'Tivemos um problema',
+                    });
+
+                    toastService.add(toast);
+                })
+                .finally(() => SET_IS_LOADING(false));
         }
     };
 
     const formGroup = new FormGroup<Fragment.SSO.FORGOT.IForm>({
-        email: new FormControl({ value: 'teste@teste.com', type: 'email', required: true }),
+        email: new FormControl({ value: '', type: 'email', required: true }),
     }, handle);
 
     const goToSignin = () => navigate('/', { replace: false });
