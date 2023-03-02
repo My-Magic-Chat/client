@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IProps } from './interface';
-import Icon, { ESize } from '../Icon';
+import Icon, { ESize, TTheme } from '../Icon';
 
 import './Button.scss';
 
@@ -25,9 +25,13 @@ const Button = ({
         return arr.join(' ');
     };
 
+    const getIconTheme = (): TTheme => {
+        return outline ? 'gray' : 'mode';
+    };
+
     const getContent = () => {
         return isLoading
-            ? <Icon icon="loading" theme="mode" animation="rotate" size={ESize.BIG} style={{ marginTop: '5px'}}></Icon>
+            ? <Icon icon="loading" theme={getIconTheme()} animation="rotate" size={ESize.BIG} style={{ marginTop: '5px' }}></Icon>
             : children;
     };
 

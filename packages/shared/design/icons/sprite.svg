@@ -103,7 +103,7 @@
             <g>
                 <path fill="currentColor" fill-rule="evenodd"
                     d="M6.444 3.685A10 10 0 0 1 12 2a1 1 0 1 1 0 2 8 8 0 1 0 8 8 1 1 0 1 1 2 0A10 10 0 1 1 6.444 3.685z"
-                    clip-rule="evenodd" data-original="#000000"></path>
+                    clip-rule="evenodd"></path>
             </g>
         </symbol>
     </defs>

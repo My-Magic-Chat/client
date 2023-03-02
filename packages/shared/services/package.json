@@ -16,6 +16,7 @@
     "lint": "eslint --ext .ts . --ignore-pattern '/dist'"
   },
   "dependencies": {
+    "js-cookie": "^3.0.1",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

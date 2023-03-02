@@ -38,7 +38,7 @@ const Signup = ({ formGroup, signinWithGoogle, isLoading, goToSignin }: IProps) 
                         <Input controlName="password" label="Senha" type="password" />
                         <Input controlName="confirmPassword" label="Confirme sua Senha" type="password" />
 
-                        <Button type="submit" isLoading={isLoading} fluid>Continuar</Button>
+                        <Button type="submit" isLoading={isLoading} disabled={isLoading} fluid>Continuar</Button>
                     </Form>
 
                     <div className="create">

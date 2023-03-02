@@ -31,6 +31,7 @@ describe('Signin', () => {
                 goToCreate={handle.create}
                 forgotPassword={handle.forgot}
                 signinWithGoogle={handle.google}
+                loading={{ signin: false, google: false }}
             />
         );
     });

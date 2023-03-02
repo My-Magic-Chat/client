@@ -7,6 +7,10 @@ export interface IForm {
 }
 
 export interface IProps {
+    loading: {
+        signin: boolean;
+        google: boolean;
+    };
     goToCreate: () => any;
     forgotPassword: () => any;
     signinWithGoogle: () => any;

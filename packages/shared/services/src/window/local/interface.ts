@@ -1,0 +1,2 @@
+export type TKey = 
+    'teste';

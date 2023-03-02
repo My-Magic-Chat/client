@@ -19,6 +19,12 @@
         ]
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "build",
+        "dist",
+        "**/stories/**",
+        "**/__mocks__",
+        "**/tests",
+        "**/*.(test|spec).tsx"
     ]
 }

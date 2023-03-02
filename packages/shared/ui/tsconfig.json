@@ -43,6 +43,6 @@
     "**/stories/**",
     "**/__mocks__",
     "**/tests",
-    "**/*.(test|spec).tsx",
+    "**/*.(test|spec).tsx"
   ]
 }
