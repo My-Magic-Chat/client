@@ -23,7 +23,7 @@ describe('Signin', () => {
             remember: new FormControl({ value: true }),
             email: new FormControl({ value: '', type: 'email', required: true }),
             password: new FormControl({ value: '', type: 'password', required: true })
-        }, { submit: (form) => handle.submit });
+        }, { submit: () => handle.submit });
 
         wrapper = render(
             <Signin

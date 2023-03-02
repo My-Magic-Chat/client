@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof Signin> = () => {
         email: new FormControl({ value: 'teste@teste.com', type: 'email', required: true }),
         password: new FormControl({ value: '123123123', type: 'password', required: true })
     }, {
-        submit: (form) => {
+        submit: () => {
             SET_IS_LOADING(true);
             setTimeout(() => { SET_IS_LOADING(false); }, 2000);
         }
