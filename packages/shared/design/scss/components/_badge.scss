@@ -1,0 +1,59 @@
+button {
+    .ds-badge {
+        margin-left: 5px;
+    }
+}
+
+.#{$pre}-badge {
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: $radius;
+    border: none;
+    padding: 2px 4px;
+    color: var(--mode);
+    transition: all $animation;
+    font-size: 12px;
+    width: fit-content;
+    font-family: var(--font-family);
+
+    &.brand {
+        background-color: var(--brand);
+        color: #fff;
+    }
+
+    &.accent {
+        background-color: var(--accent);
+        color: #fff;
+    }
+
+    &.support {
+        background-color: var(--support);
+        color: #fff;
+    }
+
+    &.red {
+        background-color: var(--red-100);
+        color: #fff;
+    }
+
+    &.green {
+        background-color: var(--green-100);
+        color: #fff;
+    }
+
+    &.yellow {
+        background-color: var(--yellow-100);
+        color: #fff;
+    }
+
+    &.blue {
+        background-color: var(--blue-100);
+        color: #fff;
+    }
+
+    &.emphasis {
+        background-color: var(--emphasis);
+        color: #fff;
+    }
+}
