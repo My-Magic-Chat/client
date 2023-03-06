@@ -1,8 +1,11 @@
+import Default from 'src/layout/Default';
 import './Dashboard.scss';
 
 function Dashboard() {
     return (
-        <p>Manager it's works</p>
+        <Default>
+            teste
+        </Default>
     );
 }
 
