@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import core from 'src/services/core';
 
-import { Fragment, Handle, FormGroup, FormControl, Toast, useToast } from '@client/ui';
+import { Pages, Handle, FormGroup, FormControl, Toast, useToast } from '@client/ui';
 
 
 import './Forgot.scss';
@@ -14,7 +14,7 @@ function Forgot() {
 
     useEffect(() => { document.title = 'Esqueci minha senha'; }, []);
 
-    const handle: Handle<Fragment.SSO.FORGOT.IForm> = {
+    const handle: Handle<Pages.SSO.FORGOT.IForm> = {
         submit: (form) => {
             SET_IS_LOADING(true);
             core.sso.forgot(form.values.email)
@@ -34,14 +34,14 @@ function Forgot() {
         }
     };
 
-    const formGroup = new FormGroup<Fragment.SSO.FORGOT.IForm>({
+    const formGroup = new FormGroup<Pages.SSO.FORGOT.IForm>({
         email: new FormControl({ value: '', type: 'email', required: true }),
     }, handle);
 
     const goToSignin = () => navigate('/', { replace: false });
 
     return (
-        <Fragment.SSO.Forgot
+        <Pages.SSO.Forgot
             formGroup={formGroup}
             isLoading={IS_LOADING}
             goToSignin={goToSignin}

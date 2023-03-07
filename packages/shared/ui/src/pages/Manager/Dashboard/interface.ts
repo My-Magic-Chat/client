@@ -1,5 +1,3 @@
-import { FormGroup } from '@components/Form';
-
 export interface IForm {
     email: string;
 }
@@ -7,4 +5,5 @@ export interface IForm {
 export interface IProps {
     handleClick: () => any;
     goToInitial: () => any;
+    goTo: () => any;
 }

@@ -1,6 +1,6 @@
 import { Fragment } from '@client/ui';
 
-export const BUTTONS: Fragment.MANAGER.SIDENAV.IButton[] = [
+const BUTTONS_MAIN: Fragment.SIDENAV.IButton[] = [
     {
         label: 'Dashboard',
         path: '/',
@@ -13,7 +13,7 @@ export const BUTTONS: Fragment.MANAGER.SIDENAV.IButton[] = [
     }
 ];
 
-export const BUTTONS_SUPPORT: Fragment.MANAGER.SIDENAV.IButton[] = [
+const BUTTONS_SUPPORT: Fragment.SIDENAV.IButton[] = [
     {
         label: 'Settings',
         path: '/settings',
@@ -25,3 +25,8 @@ export const BUTTONS_SUPPORT: Fragment.MANAGER.SIDENAV.IButton[] = [
         icon: 'question-circle'
     }
 ];
+
+export const BUTTONS = {
+    main: BUTTONS_MAIN,
+    support: BUTTONS_SUPPORT
+};

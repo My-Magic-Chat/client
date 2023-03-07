@@ -12,7 +12,7 @@ export default {
 
 const Template: ComponentStory<typeof Navbar> = () => {
     return (
-        <Navbar path="Dashboard" user={USER} />
+        <Navbar handleClick={() => console.log('handleClick')} path="Dashboard" user={USER} />
     );
 };
 

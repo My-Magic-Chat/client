@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { FormControl, FormGroup, Handle } from '@components/Form';
 
 import Forgot from './Dashboard';
-import { IForm } from './interface';
 
 export default {
     title: 'Pages/Manager/Dashboard',

@@ -1,17 +1,16 @@
-import { Wrapper } from '@client/ui';
+import { Fragment } from '@client/ui';
 
-import Sidenav from '../containers/Sidenav';
 import { IProps } from './';
 
 const Default = ({ children }: IProps) => {
     return (
-        <Wrapper>
-            <Sidenav />
-
-            <main>
-                {children}
-            </main>
-        </Wrapper>
+        <Fragment.BoardWrapper
+            goTo={() => console.log('goTo')}
+            goToInitial={() => console.log('goToInitial')}
+            handleClick={() => console.log('handleClick')}
+        >
+            {children}
+        </Fragment.BoardWrapper>
     );
 };
 

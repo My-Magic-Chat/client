@@ -6,9 +6,9 @@ import { IProps } from './interface';
 
 import './Dashboard.scss';
 
-const Dashboard = ({ goToInitial, handleClick }: IProps) => {
+const Dashboard = ({ goToInitial, handleClick, goTo }: IProps) => {
     return (
-        <BoardWrapper handleClick={handleClick} goToInitial={goToInitial}>
+        <BoardWrapper goTo={goTo} handleClick={handleClick} goToInitial={goToInitial}>
             <h1>bolo</h1>
         </BoardWrapper>
     );

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import core from 'src/services/core';
 
-import { Handle, Validator, Fragment, FormGroup, FormControl, Toast, useToast } from '@client/ui';
+import { Handle, Validator, Pages, FormGroup, FormControl, Toast, useToast } from '@client/ui';
 
 import './Signup.scss';
 
@@ -14,7 +14,7 @@ function Signup() {
 
     useEffect(() => { document.title = 'Cadastrar'; }, []);
 
-    const handle: Handle<Fragment.SSO.SIGNUP.IForm> = {
+    const handle: Handle<Pages.SSO.SIGNUP.IForm> = {
         submit: (form) => {
             SET_IS_LOADING(true);
             core.sso.signUp(form.values.email, form.values.password)
@@ -34,7 +34,7 @@ function Signup() {
         }
     };
 
-    const validator: Validator<Fragment.SSO.SIGNUP.IForm> = {
+    const validator: Validator<Pages.SSO.SIGNUP.IForm> = {
         password: (form) => {
             const { password, confirmPassword } = form.values;
 
@@ -46,7 +46,7 @@ function Signup() {
         }
     };
 
-    const formGroup = new FormGroup<Fragment.SSO.SIGNUP.IForm>({
+    const formGroup = new FormGroup<Pages.SSO.SIGNUP.IForm>({
         firstName: new FormControl({ value: 'Leonardo', required: true }),
         lastName: new FormControl({ value: 'Gonçalves', required: true }),
         email: new FormControl({ value: 'leo@mymagicchat.com', type: 'email', required: true }),
@@ -59,7 +59,7 @@ function Signup() {
     const signinWithGoogle = () => console.log('signinWithGoogle');
 
     return (
-        <Fragment.SSO.Signup
+        <Pages.SSO.Signup
             formGroup={formGroup}
             goToSignin={goToSignin}
             signinWithGoogle={signinWithGoogle}

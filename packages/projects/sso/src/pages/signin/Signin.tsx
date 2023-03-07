@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import core from 'src/services/core';
 
-import { Fragment, FormGroup, FormControl, Handle, Toast, useToast } from '@client/ui';
+import { Pages, FormGroup, FormControl, Handle, Toast, useToast } from '@client/ui';
 
 import './Signin.scss';
 
@@ -15,7 +15,7 @@ function Signin() {
 
     useEffect(() => { document.title = 'Entrar'; }, []);
 
-    const handle: Handle<Fragment.SSO.SIGNIN.IForm> = {
+    const handle: Handle<Pages.SSO.SIGNIN.IForm> = {
         submit: async (form) => {
             SET_IS_LOADING(true);
             core.sso.signIn(form.values.email, form.values.password)
@@ -35,7 +35,7 @@ function Signin() {
         }
     };
 
-    const formGroup = new FormGroup<Fragment.SSO.SIGNIN.IForm>({
+    const formGroup = new FormGroup<Pages.SSO.SIGNIN.IForm>({
         email: new FormControl({ value: '', type: 'email', required: true }),
         password: new FormControl({ value: '', type: 'password', required: true }),
         remember: new FormControl({ value: false }),
@@ -47,7 +47,7 @@ function Signin() {
     const signinWithGoogle = () => console.log('signinWithGoogle');
 
     return (
-        <Fragment.SSO.Signin
+        <Pages.SSO.Signin
             formGroup={formGroup}
             goToCreate={createAccount}
             forgotPassword={forgotPassword}

@@ -12,6 +12,7 @@ export default {
 const Template: ComponentStory<typeof BoardWrapper> = () => {
     return (
         <BoardWrapper
+            goTo={() => console.log('goTo')}
             goToInitial={() => console.log('goToInitial')}
             handleClick={() => console.log('handleClick')}
         >
