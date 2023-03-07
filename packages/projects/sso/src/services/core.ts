@@ -4,7 +4,6 @@ import { Base, Cookies, Handler, Local, Session, Http } from '@client/services';
 import { Environment } from '@client/setup';
 import { SSO } from '@client/business';
 
-
 class Core {
     public http = Http;
     public local = Local;
@@ -27,6 +26,10 @@ class Core {
             env: process.env.REACT_APP_ENV,
             domain: process.env.REACT_APP_DOMAIN,
             baseUrl: process.env.REACT_APP_BASE_URL,
+            url: {
+                sso: process.env.REACT_APP_SSO_URL,
+                manager: process.env.REACT_APP_MANAGER_URL
+            }
         });
     }
 
