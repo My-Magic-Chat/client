@@ -33,4 +33,18 @@ export class Firebase {
     public async signOut(): Promise<void> {
         firebase.signOut(this.auth);
     }
+
+    public async googleSignIn() {
+        const provider = new firebase.GoogleAuthProvider();
+        firebase.signInWithPopup(this.auth, provider)
+            .then((res) => {
+                const credential = firebase.GoogleAuthProvider.credentialFromResult(res);
+                const token = credential.accessToken;
+                const user = res.user;
+            }).catch((e) => {
+                const credential = firebase.GoogleAuthProvider.credentialFromError(e);
+                console.log('credential', credential);
+                throw new Handler({ path: 'SSO', id: e.code }, 'api');
+            });
+    }
 }
