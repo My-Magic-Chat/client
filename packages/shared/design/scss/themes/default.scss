@@ -7,13 +7,13 @@
 
     // base
     --brand: #ff6869;
-    --brand-opacity: #ff686857;
+    --brand-50: #ff686857;
 
-    --accent: #333333;
-    --accent-opacity: #33333357;
+    --accent: #3f51b5;
+    --accent-50: #3f51b557;
 
     --support: #ffe468;
-    --support-opacity: #ffe46857;
+    --support-50: #ffe46857;
 
     --mode: #ffffff;
     --background: #f4f7f9;
@@ -23,24 +23,28 @@
     --gray-200: #cfcdd9;
     --gray-300: #535d65;
 
+    --red-50: #f4433657;
     --red-100: #ef9a9a;
     --red-200: #e57373;
     --red-300: #ef5350;
 
+    --green-50: #66bb6a42;
     --green-100: #81c784;
     --green-200: #66bb6a;
     --green-300: #4caf50;
 
+    --blue-50: #1baaf14b;
     --blue-100: #4fc3f7;
     --blue-200: #29b6f6;
     --blue-300: #03a9f4;
 
+    --yellow-50: #f49e5c3d;
     --yellow-100: #ffee58;
     --yellow-200: #ffeb3b;
     --yellow-300: #fdd835;
 
     --gradient-brand: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-    --gradient-accent: linear-gradient(to right, #434343 0%, #2b2b2b 100%);
+    --gradient-accent: linear-gradient(to right, #4f5eb6 0%, #3f51b5 19%, #3f41b5 60%, #3f64b5 100%);
 
     --gradient-red: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
     --gradient-yellow: linear-gradient(to right, #f6d365 0%, #fda085 100%);
@@ -58,11 +62,54 @@
 
     &.dark {
         // base
-        --brand: #333;
-        --background: #112d33;
+        --brand: #ff6869;
+        --brand-50: #ff686857;
+
+        --accent: #3f51b5;
+        --accent-50: #3f51b557;
+
+        --support: #ffe468;
+        --support-50: #ffe46857;
 
         --mode: #ffffff;
         --background: #f4f7f9;
         --text: #303438;
+
+        --gray-100: #edf0f4;
+        --gray-200: #cfcdd9;
+        --gray-300: #535d65;
+
+        --red-50: #f4433657;
+        --red-100: #ef9a9a;
+        --red-200: #e57373;
+        --red-300: #ef5350;
+
+        --green-50: #66bb6a42;
+        --green-100: #81c784;
+        --green-200: #66bb6a;
+        --green-300: #4caf50;
+
+        --blue-50: #1baaf14b;
+        --blue-100: #4fc3f7;
+        --blue-200: #29b6f6;
+        --blue-300: #03a9f4;
+
+        --yellow-50: #f49e5c3d;
+        --yellow-100: #ffee58;
+        --yellow-200: #ffeb3b;
+        --yellow-300: #fdd835;
+
+        --gradient-accent: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+        --gradient-brand: linear-gradient(to right, #4f5eb6 0%, #3f51b5 19%, #3f41b5 60%, #3f64b5 100%);
+
+        --gradient-red: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+        --gradient-yellow: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+        --gradient-blue: linear-gradient(to right, #4facfe 0%, #1cd7e0 100%);
+        --gradient-green: linear-gradient(to right, #9be15d 0%, #00e3ae 100%);
+
+        // Fonts
+        --font-family: "gibson" !important;
+        --font-family--light: "gibson-light" !important;
+        --font-family--bold: "gibson-semi-bold" !important;
     }
 }

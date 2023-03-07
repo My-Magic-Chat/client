@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "target": "stg-manager",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

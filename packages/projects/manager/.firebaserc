@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "staging": "stg-mymagicchat"
+  },
+  "targets": {
+    "stg-mymagicchat": {
+      "hosting": {
+        "stg-manager": [
+          "stg-manager"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -12,6 +12,9 @@ on:
       PROJECT:
         required: true
         type: string
+      COMMAND:
+        required: true
+        type: string
 
 jobs:
   lint-and-build:
@@ -72,10 +75,8 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
           MEASUREMENT_ID: ${{ secrets.MEASUREMENT_ID }}
 
-      - name: Build AUTH and dependencies
+      - name: Build and dependencies
         if: steps.cache-build.outputs.cache-hit != 'true'
         run: |
-          if [[ ${{ inputs.PROJECT == 'AUTH' }} = true ]]; then
-            make build-dependencies;
-            make build-sso;
-          fi
+          make build-dependencies;
+          make ${{ inputs.COMMAND }};

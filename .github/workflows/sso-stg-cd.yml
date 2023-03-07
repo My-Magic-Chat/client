@@ -1,0 +1,33 @@
+name: SSO - STG CD
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'packages/e2e/**'
+      - 'packages/shared/**'
+      - 'packages/projects/sso/**'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      ENVIRONMENT: STG AUTH
+      BUILD_ENV: STG
+      PROJECT: AUTH
+      COMMAND: build-sso
+    secrets: inherit
+
+  deploy:
+    needs: [build]
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ENVIRONMENT: STG AUTH
+      BUILD_ENV: STG
+      PROJECT: AUTH
+      HOSTING: stg-sso
+    secrets: inherit
+

@@ -3,7 +3,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 import { IProps } from './interface';
 
-const SwitchSlide = ({ children, direction = 'left', identifier }: IProps) => {
+const SwitchSlide = ({ children, direction = 'left', identifier, ...props }: IProps) => {
     const getDirection = () => { return `animation-slide-${direction}`; };
 
     return (
@@ -12,7 +12,7 @@ const SwitchSlide = ({ children, direction = 'left', identifier }: IProps) => {
                 key={identifier}
                 addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
                 classNames={getDirection()}>
-                <div> {children} </div>
+                <div className={props.className}> {children} </div>
             </CSSTransition>
         </SwitchTransition>
     );
