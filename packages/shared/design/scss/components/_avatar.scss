@@ -1,0 +1,20 @@
+.#{$pre}-avatar {
+    @include center;
+
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 50px;
+    box-shadow: $box-shadow;
+    background-color: var(--gray-100);
+    border: 2px solid var(--gray-200);
+
+    img {
+        width: inherit;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
