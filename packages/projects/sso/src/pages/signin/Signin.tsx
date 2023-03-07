@@ -17,34 +17,44 @@ function Signin() {
 
     const handle: Handle<Pages.SSO.SIGNIN.IForm> = {
         submit: async (form) => {
-            SET_IS_LOADING(true);
+            SET_IS_LOADING(true);            
             core.sso.signIn(form.values.email, form.values.password)
-                .then(r => console.log('result', r))
-                .catch(e => {
-                    const toast = new Toast({
-                        show: true,
-                        mode: 'danger',
-                        autoClose: true,
-                        description: e.message,
-                        title: 'Tivemos um problema',
-                    });
-
-                    toastService.add(toast);
-                })
+                .then(() => goToPlatform())
+                .catch(e => { setToast(e.message); })
                 .finally(() => SET_IS_LOADING(false));
         }
     };
 
     const formGroup = new FormGroup<Pages.SSO.SIGNIN.IForm>({
-        email: new FormControl({ value: '', type: 'email', required: true }),
-        password: new FormControl({ value: '', type: 'password', required: true }),
+        email: new FormControl({ value: 'leo@mymagicchat.com', type: 'email', required: true }),
+        password: new FormControl({ value: 'Testando4', type: 'password', required: true }),
         remember: new FormControl({ value: false }),
     }, handle);
 
     const createAccount = () => navigate('/signup', { replace: false });
     const forgotPassword = () => navigate('/forgot', { replace: false });
 
-    const signinWithGoogle = () => console.log('signinWithGoogle');
+    const signinWithGoogle = async () => {
+        core.sso.signInWithGoogle()
+            .then(() => goToPlatform())
+            .catch(e => { setToast(e.message); });
+    };
+
+    const goToPlatform = () => {
+        window.location.href = core.environment.url.manager;
+    };
+
+    const setToast = (message: string) => {
+        const toast = new Toast({
+            show: true,
+            mode: 'danger',
+            autoClose: true,
+            description: message,
+            title: 'Tivemos um problema',
+        });
+
+        toastService.add(toast);
+    };
 
     return (
         <Pages.SSO.Signin
