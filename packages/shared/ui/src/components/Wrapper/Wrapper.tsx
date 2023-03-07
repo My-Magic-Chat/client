@@ -4,10 +4,10 @@ import { IProps } from './interface';
 
 import './Wrapper.scss';
 
-const Wrapper = ({ children, gap }: IProps) => {
+const Wrapper = ({ children, gap, ...props }: IProps) => {
     const getWrapper = () => {
         const base = 'ds-wrapper';
-        const arr = [base];
+        const arr = [base, props.className];
 
         if (gap) { arr.push(`${base}--gap`); } 
         return arr.join(' ');

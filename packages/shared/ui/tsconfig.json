@@ -17,6 +17,9 @@
       "@components/*": [
         "src/components/*"
       ],
+      "@fragments/*": [
+        "src/fragments/*"
+      ],
       "@animations": [
         "src/animations"
       ]
