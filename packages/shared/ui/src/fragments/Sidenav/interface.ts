@@ -4,7 +4,7 @@ export interface IProps {
         support: Array<IButton>;
     };
     goToInitial: () => void;
-    handleClick: (path: string) => void;
+    goTo: (path: string) => void;
 }
 
 export interface IButton {

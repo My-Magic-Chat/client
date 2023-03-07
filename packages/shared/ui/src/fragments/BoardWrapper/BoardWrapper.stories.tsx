@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { SIDENAV, NAVBAR } from './__mocks__';
 import BoardWrapper from './BoardWrapper';
 
 export default {
@@ -11,11 +12,7 @@ export default {
 
 const Template: ComponentStory<typeof BoardWrapper> = () => {
     return (
-        <BoardWrapper
-            goTo={() => console.log('goTo')}
-            goToInitial={() => console.log('goToInitial')}
-            handleClick={() => console.log('handleClick')}
-        >
+        <BoardWrapper navbar={NAVBAR} sidenav={SIDENAV}>
             teste
         </BoardWrapper>
     );

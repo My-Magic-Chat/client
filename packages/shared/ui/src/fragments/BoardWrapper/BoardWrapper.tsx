@@ -15,9 +15,9 @@ const BoardWrapper = ({ navbar, sidenav, children }: IProps) => {
     return (
         <Wrapper className="boardWrapper-root teste">
             <Sidenav
+                goTo={sidenav.goTo}
                 buttons={sidenav.buttons}
                 goToInitial={sidenav.goToInitial}
-                handleClick={sidenav.goTo}
             />
             <div className="container">
                 <Navbar path="Dashboard" user={navbar.user} handleClick={navbar.handleClick}/>

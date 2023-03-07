@@ -1,20 +1,10 @@
 import React from 'react';
 
-import { IButton } from '@fragments/Sidenav/interface';
-import { IUser } from '@fragments/Navbar/interface';
+import { IProps as INavbarProps } from '@fragments/Navbar/interface';
+import { IProps as ISidenavProps } from '@fragments/Sidenav/interface';
 
 export interface IProps {
-    sidenav: {
-        goTo: () => any;
-        goToInitial: () => any;
-        buttons: {
-            main: Array<IButton>;
-            support: Array<IButton>;
-        };
-    };
-    navbar: {
-        user: IUser;
-        handleClick: () => any;
-    }
+    navbar: INavbarProps;
+    sidenav: ISidenavProps;
     children: React.ReactNode;
 }

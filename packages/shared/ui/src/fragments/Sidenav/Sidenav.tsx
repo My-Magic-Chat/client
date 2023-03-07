@@ -6,7 +6,7 @@ import { IButton, IProps } from './interface';
 
 import './Sidenav.scss';
 
-const Sidenav = ({ buttons, handleClick, goToInitial }: IProps) => {
+const Sidenav = ({ buttons, goTo, goToInitial }: IProps) => {
     const getButton = ({ label, badge, path, icon }: IButton) => {
         const getClass = () => {
             const shouldBeActivated = window.location.pathname === path;
@@ -18,7 +18,7 @@ const Sidenav = ({ buttons, handleClick, goToInitial }: IProps) => {
         };
 
         return (
-            <button className={getClass()} onClick={() => handleClick(path)}>
+            <button className={getClass()} onClick={() => goTo(path)}>
                 <div>
                     <i className={['uil', `uil-${icon}`].join(' ')}></i>
                     {label}
