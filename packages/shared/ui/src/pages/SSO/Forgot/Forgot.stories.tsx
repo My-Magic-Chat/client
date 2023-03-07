@@ -7,7 +7,7 @@ import Forgot from './Forgot';
 import { IForm } from './interface';
 
 export default {
-    title: 'Fragments/SSO/Forgot',
+    title: 'Pages/SSO/Forgot',
     component: Forgot
 } as ComponentMeta<typeof Forgot>;
 

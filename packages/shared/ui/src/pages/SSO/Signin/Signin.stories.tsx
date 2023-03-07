@@ -7,7 +7,7 @@ import Signin from './Signin';
 import { IForm } from './interface';
 
 export default {
-    title: 'Fragments/SSO/Signin',
+    title: 'Pages/SSO/Signin',
     component: Signin
 } as ComponentMeta<typeof Signin>;
 
