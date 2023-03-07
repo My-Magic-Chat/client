@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 
 import { IProps } from './interface';
 
-const Slide = ({ children, direction = 'left', show }: IProps) => {
+const Slide = ({ children, direction = 'left', show, ...props }: IProps) => {
     const [SHOW, SET_SHOW] = useState(false);
     const nodeRef = useRef(null);
 
@@ -18,7 +18,7 @@ const Slide = ({ children, direction = 'left', show }: IProps) => {
             timeout={1000}
             nodeRef={nodeRef}
             classNames={getDirection()}>
-            <div ref={nodeRef}> {children} </div>
+            <div ref={nodeRef} style={props.style} className={props.className}> {children} </div>
         </CSSTransition>
     );
 };
