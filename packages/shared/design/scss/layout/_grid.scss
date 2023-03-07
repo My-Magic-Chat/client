@@ -72,8 +72,4 @@
     &--gap {
         gap: $distance;
     }
-
-    @include for-tablet {
-        display: block;
-    }
 }
