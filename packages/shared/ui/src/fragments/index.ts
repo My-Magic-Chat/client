@@ -1,2 +1,2 @@
-export * as SSO from './SSO';
-export * as MANAGER from './Manager';
+export { Navbar } from './Navbar';
+export { Sidenav } from './Sidenav';

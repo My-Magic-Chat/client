@@ -1,0 +1,30 @@
+$header-height: 63px;
+
+.navbar-root {
+    @include between;
+    height: $header-height;
+    border-bottom: 0.5px solid var(--gray-200);
+    padding: 15px;
+    width: 100%;
+
+    .navbar-button {
+        @include start;
+
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        min-width: 100px;
+        font-size: $medium;
+        padding: 10px;
+        background: transparent;
+        transition: all $animation;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        i {
+            margin-right: 5px;
+        }
+    }
+}
