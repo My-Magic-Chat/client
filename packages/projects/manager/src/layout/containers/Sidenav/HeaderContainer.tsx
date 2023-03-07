@@ -4,7 +4,7 @@ import { BUTTONS } from './const';
 
 const HeaderContainer = () => {
     return (
-        <Fragment.MANAGER.Sidenav
+        <Fragment.Sidenav
             buttons={BUTTONS}
             goToInitial={() => console.log('goto')}
             handleClick={(path) => console.log('path', path)}
