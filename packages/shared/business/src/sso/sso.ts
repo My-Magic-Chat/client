@@ -16,7 +16,12 @@ export class SSO {
     }
 
     public async signIn(email: string, password: string): Promise<firebase.UserCredential> {
-        return this.firebase.signIn(email, password);
+        return this.firebase.signIn(email, password)
+            .then(r => r);
+    }
+
+    public async signInWithGoogle(): Promise<void> {
+        this.firebase.googleSignIn();
     }
 
     public async signUp(email: string, password: string): Promise<firebase.UserCredential> {

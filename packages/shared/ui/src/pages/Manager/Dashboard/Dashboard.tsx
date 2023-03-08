@@ -1,16 +1,12 @@
 import React from 'react';
 
-import { BoardWrapper } from '@fragments/BoardWrapper';
-
 import { IProps } from './interface';
 
 import './Dashboard.scss';
 
-const Dashboard = ({ goToInitial, handleClick, goTo }: IProps) => {
+const Dashboard = ({ }: IProps) => {
     return (
-        <BoardWrapper goTo={goTo} handleClick={handleClick} goToInitial={goToInitial}>
-            <h1>bolo</h1>
-        </BoardWrapper>
+        <h1>Dashboard it's works</h1>
     );
 };
 

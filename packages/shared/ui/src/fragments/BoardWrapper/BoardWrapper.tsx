@@ -6,23 +6,21 @@ import { Slide } from '@animations';
 import { Navbar } from '../Navbar';
 import { Sidenav } from '../Sidenav';
 import { IProps } from './interface';
-import { USER } from '../Navbar/__mocks__';
-import { BUTTONS } from '../Sidenav/__mocks__';
 
 import './BoardWrapper.scss';
 
-const BoardWrapper = ({ handleClick, goTo, goToInitial, children }: IProps) => {
+const BoardWrapper = ({ navbar, sidenav, children }: IProps) => {
     const path = () => window.location.pathname;
 
     return (
         <Wrapper className="boardWrapper-root teste">
             <Sidenav
-                buttons={BUTTONS}
-                goToInitial={goToInitial}
-                handleClick={goTo}
+                goTo={sidenav.goTo}
+                buttons={sidenav.buttons}
+                goToInitial={sidenav.goToInitial}
             />
             <div className="container">
-                <Navbar path="Dashboard" user={USER} handleClick={handleClick}/>
+                <Navbar path="Dashboard" user={navbar.user} handleClick={navbar.handleClick}/>
                 <Slide.Switch className="content" direction="left" identifier={path()}>
                     {children}
                 </Slide.Switch>

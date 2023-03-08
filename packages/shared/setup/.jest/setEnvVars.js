@@ -1,3 +1,6 @@
-process.env.REACT_APP_ENV = 'STAGING';
-process.env.REACT_APP_BASE_URL = 'http://';
-process.env.REACT_APP_DOMAIN = 'localhost';
+process.env.ENV = 'STAGING';
+process.env.BASE_URL = 'http://';
+process.env.DOMAIN = 'localhost';
+
+process.env.SSO_URL = 'stg-sso.web.app';
+process.env.MANAGER_URL = 'stg-manager.web.app';

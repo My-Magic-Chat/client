@@ -14,8 +14,8 @@ const Template: ComponentStory<typeof Sidenav> = () => {
     return (
         <Sidenav
             buttons={BUTTONS}
+            goTo={console.log}
             goToInitial={() => console.log('tela inicial')}
-            handleClick={console.log}
         />
     );
 };
