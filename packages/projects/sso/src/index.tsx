@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 
-import { ToastProvider } from '@client/ui';
+import { ToastProvider, TranslateProvider } from '@client/ui';
 
 import reportWebVitals from './reportWebVitals';
 import App from './App';
@@ -13,9 +13,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <ToastProvider>
-            <App />
-        </ToastProvider>
+        <TranslateProvider>
+            <ToastProvider>
+                <App />
+            </ToastProvider>
+        </TranslateProvider>
     </React.StrictMode>
 );
 
