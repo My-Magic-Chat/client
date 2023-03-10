@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Slide } from '@animations';
 import Link from '@components/Link';
@@ -11,17 +12,19 @@ import { IProps } from './interface';
 import './Signup.scss';
 
 const Signup = ({ formGroup, signinWithGoogle, isLoading, goToSignin }: IProps) => {
+    const { t } = useTranslation();
+
     return (
         <Slide.Initial direction="left" show>
             <div className="signup-root">
                 <div className="content">
                     <div className="title">
-                        <h1>Cadastrar</h1>
-                        <p>Vamos criar uma conta para você</p>
+                        <h1>{t('SSO.SIGNUP.title')}</h1>
+                        <p>{t('SSO.SIGNUP.subtitle')}</p>
                     </div>
 
                     <div className="middle">
-                        <Button onClick={signinWithGoogle} fluid outline>Entrar com o Google</Button>
+                        <Button onClick={signinWithGoogle} fluid outline>{t('SSO.SIGNUP.signinWithGoogle')}</Button>
 
                         <div className="or">
                             <div className="row"></div>
@@ -31,19 +34,19 @@ const Signup = ({ formGroup, signinWithGoogle, isLoading, goToSignin }: IProps) 
                     </div>
 
                     <Form formGroup={formGroup}>
-                        <Input controlName="firstName" label="Primeiro nome" />
-                        <Input controlName="lastName" label="Último nome" />
-                        <Input controlName="email" label="Email" />
+                        <Input controlName="firstName" label={t('SSO.SIGNUP.firstName').toString()} />
+                        <Input controlName="lastName" label={t('SSO.SIGNUP.lastName').toString()} />
+                        <Input controlName="email" label={t('SSO.SIGNUP.email').toString()} />
 
-                        <Input controlName="password" label="Senha" type="password" />
-                        <Input controlName="confirmPassword" label="Confirme sua Senha" type="password" />
+                        <Input controlName="password" label={t('SSO.SIGNUP.password').toString()} type="password" />
+                        <Input controlName="confirmPassword" label={t('SSO.SIGNUP.confirmPassword').toString()} type="password" />
 
-                        <Button type="submit" isLoading={isLoading} disabled={isLoading} fluid>Continuar</Button>
+                        <Button type="submit" isLoading={isLoading} disabled={isLoading} fluid>{t('SSO.SIGNUP.continue')}</Button>
                     </Form>
 
                     <div className="create">
-                        <p>Já possui conta?</p>
-                        <Link isExternal click={goToSignin}>Entre aqui!</Link>
+                        <p>{t('SSO.SIGNUP.alreadHaveAccount')}</p>
+                        <Link isExternal click={goToSignin}>{t('SSO.SIGNUP.here')}</Link>
                     </div>
                 </div>
             </div>

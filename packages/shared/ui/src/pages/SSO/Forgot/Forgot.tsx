@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Slide } from '@animations';
 import Link from '@components/Link';
@@ -11,23 +12,25 @@ import { IProps } from './interface';
 import './Forgot.scss';
 
 const Forgot = ({ formGroup, isLoading, goToSignin }: IProps) => {
+    const { t } = useTranslation();
+
     return (
         <Slide.Initial direction="left" show>
             <div className="forgot-root">
                 <div className="content">
                     <div className="title">
-                        <h1>Esqueceu sua senha?</h1>
-                        <p>Entre com seu email e nós vamos te ajudar a redefinir</p>
+                        <h1>{t('SSO.FORGOT.title')}</h1>
+                        <p>{t('SSO.FORGOT.subtitle')}</p>
                     </div>
 
                     <Form formGroup={formGroup}>
                         <Input controlName="email" label="Email" />
-                        <Button type="submit" isLoading={isLoading} fluid>Continuar</Button>
+                        <Button type="submit" isLoading={isLoading} fluid>{t('SSO.FORGOT.continue')}</Button>
                     </Form>
 
                     <div className="signin">
-                        <p>Já possui conta?</p>
-                        <Link isExternal click={goToSignin}>Entre aqui!</Link>
+                        <p>{t('SSO.FORGOT.alreadHaveAccount')}</p>
+                        <Link isExternal click={goToSignin}>{t('SSO.FORGOT.here')}</Link>
                     </div>
                 </div>
             </div>
