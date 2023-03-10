@@ -1,0 +1,1 @@
+export { default as enUs } from './en-us';
