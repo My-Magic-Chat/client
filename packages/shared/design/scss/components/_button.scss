@@ -3,6 +3,7 @@
     height: 42px;
     padding: 0px 15px;
     border: none;
+    color: var(--text);
     border-radius: $radius;
     font-size: $medium;
     transition: all $animation;
@@ -26,7 +27,7 @@
 
     &._brand {
         background-image: var(--gradient-brand);
-        color: var(--mode);
+        color: var(--white-100);
 
         &:hover {
             box-shadow: 0px 4px 5px var(--brand-50);

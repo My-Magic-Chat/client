@@ -19,6 +19,8 @@
     --background: #f4f7f9;
     --text: #303438;
 
+    --white-100: #fcfbfb;
+
     --gray-100: #edf0f4;
     --gray-200: #cfcdd9;
     --gray-300: #535d65;
@@ -71,13 +73,15 @@
         --support: #ffe468;
         --support-50: #ffe46857;
 
-        --mode: #ffffff;
-        --background: #f4f7f9;
-        --text: #303438;
+        --mode: #272829;
+        --background: #1e1f20;
+        --text: #c4c6c8;
 
-        --gray-100: #edf0f4;
-        --gray-200: #cfcdd9;
-        --gray-300: #535d65;
+        --white-100: #fcfbfb;
+
+        --gray-100: #494949;
+        --gray-200: #686868;
+        --gray-300: #868686;
 
         --red-50: #f4433657;
         --red-100: #ef9a9a;
@@ -99,8 +103,8 @@
         --yellow-200: #ffeb3b;
         --yellow-300: #fdd835;
 
-        --gradient-accent: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-        --gradient-brand: linear-gradient(to right, #4f5eb6 0%, #3f51b5 19%, #3f41b5 60%, #3f64b5 100%);
+        --gradient-brand: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+        --gradient-accent: linear-gradient(to right, #4f5eb6 0%, #3f51b5 19%, #3f41b5 60%, #3f64b5 100%);
 
         --gradient-red: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
         --gradient-yellow: linear-gradient(to right, #f6d365 0%, #fda085 100%);

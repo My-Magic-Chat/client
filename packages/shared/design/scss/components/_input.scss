@@ -21,6 +21,8 @@
             height: -webkit-fill-available;
             outline: none;
             user-select: none;
+            color: var(--text);
+            transition: all $animation;
 
             &._padding {
                 padding-left: 10px;
