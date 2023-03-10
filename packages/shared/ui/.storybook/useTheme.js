@@ -4,13 +4,20 @@ export const useTheme = (StoryFn) => {
     const [{ theme }] = useGlobals();
 
     useEffect(() => {
-        //document.body refers to body tag inside iframe#storybook-preview-iframe
-        document.body.setAttribute('data-theme', theme);
+        const tag = document.getElementsByTagName('HTML')[0];
+
+        if (theme === 'dark') {
+            tag.classList.remove('light');
+            tag.classList.add('dark');
+        }
+
+        if (theme === 'light') {
+            tag.classList.remove('dark');
+            tag.classList.add('light');
+        }
 
         console.log('theme', theme);
     }, [theme]);
-
-    document.getElementsByTagName('BODY')[0].classList.add(theme);
 
     return StoryFn();
 };
