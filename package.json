@@ -20,16 +20,16 @@
     "test:watchAll": "jest --watchAll"
   },
   "devDependencies": {
-    "@client/ui": "*",
-    "@client/lint": "*",
-    "@client/setup": "*",
-    "@client/design": "*",
-    "@client/services": "*",
     "@client/business": "*",
+    "@client/design": "*",
+    "@client/lint": "*",
+    "@client/services": "*",
+    "@client/setup": "*",
+    "@client/ui": "*",
     "@types/node": "^17.0.24",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
     "ts-jest": "^27.1.4"
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.4.1"
 }
