@@ -48,14 +48,18 @@ export default {
     }
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args: IProps) => <Button
-    type={args.type}
-    children={args.children}
-    theme={args.theme}
-    fluid={args.fluid}
-    disabled={args.disabled}
-    isLoading={args.isLoading}
-    onClick={() => console.log('Logando...')} />;
+const Template: ComponentStory<typeof Button> = (args: IProps) => {
+    return (
+        <Button
+            type={args.type}
+            theme={args.theme}
+            fluid={args.fluid}
+            disabled={args.disabled}
+            isLoading={args.isLoading}>
+            {args.children}
+        </Button >
+    );
+};
 
 export const Primary = Template.bind({});
 

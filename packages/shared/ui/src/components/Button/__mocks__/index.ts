@@ -1,6 +1,6 @@
 import { IProps } from '../interface';
 const data: Partial<IProps> = {
-    children: 'Some Text here',
+    children: 'Text Here',
     type: 'button',
     theme: 'brand',
     fluid: false,

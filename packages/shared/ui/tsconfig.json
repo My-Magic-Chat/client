@@ -11,6 +11,9 @@
       "@mocks/*": [
         "__mocks__/*"
       ],
+      "@i18n/*": [
+        "src/shared/i18n/*"
+      ],
       "@services/*": [
         "src/shared/services/*"
       ],
