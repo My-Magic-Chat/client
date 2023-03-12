@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation, Trans } from 'react-i18next';
 
 import { Slide } from '@animations';
 import Link from '@components/Link';
@@ -7,13 +6,14 @@ import Form from '@components/Form';
 import Input from '@components/Input';
 import Button from '@components/Button';
 import Checkbox from '@components/Checkbox';
+import { useTranslate } from '@hook/translate';
 
 import { IProps } from './interface';
 
 import './Signin.scss';
 
 const Signin = ({ formGroup, loading, forgotPassword, signinWithGoogle, goToCreate }: IProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslate();
 
     return (
         <Slide.Initial direction="right" show>
