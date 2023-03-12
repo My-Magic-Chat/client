@@ -8,7 +8,7 @@ import { IProps } from './interface';
 import 'reactflow/dist/style.css';
 import './Workflow.scss';
 
-const Workflow = ({ nodes, edges, onEdgesChange, onConnect }: IProps) => {
+const Workflow = ({ nodes, edges, onEdgesChange, onConnect, onNodesChange }: IProps) => {
     const NODE_TYPES = {
         box: Box
     };
@@ -21,6 +21,7 @@ const Workflow = ({ nodes, edges, onEdgesChange, onConnect }: IProps) => {
                 nodeTypes={NODE_TYPES}
                 onConnect={onConnect}
                 onEdgesChange={onEdgesChange}
+                onNodesChange={onNodesChange}
             >
                 <Background gap={12} size={2} color="#ddd" />
             </ReactFlow>
